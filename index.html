@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Empire Luxury Hotel | Yaoundé, Cameroun – Where Royalty Rests</title>
+<meta name="description" content="Empire Luxury Hotel – 5-star luxury in Etoa-Meki, Yaoundé, Cameroon. 3 pools, spa, fine dining, airport transfers & world-class service.">
+<meta name="keywords" content="Empire Luxury Hotel, hotel Yaoundé, luxury hotel Cameroon, hotel Etoa-Meki, hôtel luxe Cameroun">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Empire Luxury Hotel – Where Royalty Rests | Yaoundé">
+<meta property="og:description" content="5-star luxury in Yaoundé — 3 pools, spa, fine dining & 24/7 concierge.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Hotel","name":"Empire Luxury Hotel","address":{"@type":"PostalAddress","streetAddress":"Etoa-Meki","addressLocality":"Yaoundé","addressCountry":"CM"},"telephone":"+237698800140","starRating":{"@type":"Rating","ratingValue":"5"}}</script>
+<style>
+/* ══════════════════════════════════════════
+   RESET & VARIABLES
+══════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#D4A843;--gold-l:#F0C96A;--gold-d:#9A7420;
+  --red:#8B1A1A;--red-l:#B22222;--red-d:#5C0E0E;
+  --noir:#0E0E0E;--n2:#181818;--n3:#222222;
+  --ivory:#F8F3EA;--cream:#FAF7F1;--iv2:#F0E8D8;
+  --tm:rgba(248,243,234,0.55);--th:rgba(248,243,234,0.80);
+  --gg:linear-gradient(135deg,var(--gold-l),var(--gold),var(--gold-d));
+  --rg:linear-gradient(135deg,var(--red-l),var(--red),var(--red-d));
+  --sg:0 8px 40px rgba(212,168,67,0.22);
+  --sr:0 8px 40px rgba(139,26,26,0.28);
+  --sd:0 24px 64px rgba(0,0,0,0.45);
+  --fd:'Cormorant Garamond',serif;
+  --fa:'Cinzel',serif;
+  --fb:'Raleway',sans-serif;
+  --tr:all 0.42s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--noir);color:var(--ivory);overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--noir)}
+::-webkit-scrollbar-thumb{background:var(--red);border-radius:3px}
+
+/* ══════════════════════════════════════════
+   PAGE SYSTEM — only one view visible at a time
+══════════════════════════════════════════ */
+.page{display:none}
+.page.active{display:block}
+
+/* ══════════════════════════════════════════
+   SHARED NAVBAR
+══════════════════════════════════════════ */
+#nb{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.4rem 5%;display:flex;align-items:center;justify-content:space-between;transition:var(--tr)}
+#nb.sc{background:rgba(10,10,10,0.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:.85rem 5%;border-bottom:1px solid rgba(212,168,67,0.15);box-shadow:0 4px 24px rgba(0,0,0,.4)}
+#nb.room-nb{background:rgba(10,10,10,0.97);backdrop-filter:blur(18px);padding:1rem 5%;border-bottom:1px solid rgba(212,168,67,0.12)}
+.nl{display:flex;flex-direction:column;line-height:1;cursor:pointer}
+.nl-m{font-family:var(--fa);font-size:clamp(1rem,2.5vw,1.45rem);font-weight:600;color:var(--gold);letter-spacing:.18em}
+.nl-s{font-size:clamp(.4rem,1vw,.5rem);font-weight:300;color:rgba(212,168,67,.6);letter-spacing:.38em;text-transform:uppercase;margin-top:3px}
+.nv{display:flex;align-items:center;gap:clamp(.8rem,2vw,2.2rem)}
+.nv a,.nv button{font-size:clamp(.55rem,1vw,.68rem);font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(248,243,234,.72);position:relative;transition:color .3s;white-space:nowrap;background:none;border:none;cursor:pointer;font-family:var(--fb);padding:0}
+.nv a::after,.nv button::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .32s}
+.nv a:hover,.nv button:hover{color:var(--gold)}
+.nv a:hover::after,.nv button:hover::after{transform:scaleX(1);transform-origin:left}
+.nr{display:flex;align-items:center;gap:.65rem;flex-shrink:0}
+.lb{font-family:var(--fa);font-size:.56rem;letter-spacing:.15em;color:rgba(248,243,234,.5);padding:.26rem .58rem;border:1px solid rgba(212,168,67,.22);border-radius:2px;transition:var(--tr);cursor:pointer;background:none}
+.lb.on,.lb:hover{color:var(--gold);border-color:var(--gold);background:rgba(212,168,67,.08)}
+.bnr{font-family:var(--fa);font-size:.58rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:.6rem 1.3rem;background:var(--rg);color:var(--ivory);border-radius:2px;transition:var(--tr);white-space:nowrap;display:inline-block;cursor:pointer;border:none}
+.bnr:hover{transform:translateY(-2px);box-shadow:var(--sr)}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;flex-shrink:0}
+.hbg span{display:block;width:22px;height:1.5px;background:var(--gold);transition:var(--tr)}
+.hbg.op span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hbg.op span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hbg.op span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mm{display:none;position:fixed;top:0;right:-100%;width:min(300px,82vw);height:100vh;background:var(--n2);z-index:999;padding:5rem 2rem 2rem;transition:right .42s cubic-bezier(.25,.46,.45,.94);border-left:1px solid rgba(212,168,67,.1);flex-direction:column;overflow-y:auto}
+.mm.op{right:0}
+.mm button,.mm a{display:block;padding:.85rem 0;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ivory);border-bottom:1px solid rgba(212,168,67,.07);transition:color .3s;background:none;border-top:none;border-left:none;border-right:none;text-align:left;cursor:pointer;font-family:var(--fb);width:100%}
+.mm button:hover,.mm a:hover{color:var(--gold)}
+.mm .mr{margin-top:1.5rem;display:block;text-align:center;padding:.9rem;background:var(--rg);color:var(--ivory);border-radius:2px;font-family:var(--fa);font-size:.62rem;letter-spacing:.2em;border:none;cursor:pointer;width:100%}
+.mlo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:998}
+.mlo.op{display:block}
+
+/* ══════════════════════════════════════════
+   SHARED BUTTONS & LABELS
+══════════════════════════════════════════ */
+.bp{font-family:var(--fa);font-size:clamp(.55rem,1.1vw,.68rem);font-weight:600;letter-spacing:.22em;text-transform:uppercase;padding:clamp(.75rem,2vw,1rem) clamp(1.3rem,4vw,2.4rem);background:var(--gg);color:var(--noir);border-radius:2px;transition:var(--tr);display:inline-block;cursor:pointer;border:none}
+.bp:hover{transform:translateY(-3px);box-shadow:var(--sg)}
+.bo{font-family:var(--fa);font-size:clamp(.55rem,1.1vw,.68rem);font-weight:500;letter-spacing:.22em;text-transform:uppercase;padding:clamp(.75rem,2vw,1rem) clamp(1.3rem,4vw,2.4rem);border:1px solid rgba(248,243,234,.42);color:var(--ivory);border-radius:2px;transition:var(--tr);display:inline-block;cursor:pointer;background:none}
+.bo:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px);background:rgba(212,168,67,.07)}
+.bc{font-family:var(--fa);font-size:clamp(.55rem,1.1vw,.68rem);font-weight:600;letter-spacing:.22em;text-transform:uppercase;padding:clamp(.75rem,2vw,1rem) clamp(1.3rem,4vw,2.4rem);background:var(--rg);color:var(--ivory);border-radius:2px;transition:var(--tr);display:inline-block;cursor:pointer;border:none}
+.bc:hover{transform:translateY(-3px);box-shadow:var(--sr)}
+.slbl{font-family:var(--fa);font-size:clamp(.5rem,1vw,.62rem);font-weight:500;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem;justify-content:center}
+.slbl::before,.slbl::after{content:'';flex:0 0 26px;height:1px;background:var(--gold);opacity:.5}
+.slbl.dk{color:var(--gold-d)}.slbl.dk::before,.slbl.dk::after{background:var(--gold-d)}
+.sh{font-family:var(--fd);font-size:clamp(1.9rem,4.5vw,3.2rem);font-weight:300;line-height:1.15;color:var(--ivory);text-align:center;margin-bottom:1rem}
+.sh em{font-style:italic;color:var(--gold)}
+.sh.ol{color:var(--noir)}.sh.ol em{color:var(--red)}
+.ss{font-size:clamp(.78rem,1.5vw,.9rem);font-weight:300;color:var(--tm);max-width:500px;margin:0 auto;text-align:center;line-height:1.85}
+.sec-hdr{text-align:center;margin-bottom:clamp(2.2rem,5vw,4rem)}
+.gdiv{display:flex;align-items:center;gap:.8rem;margin:2rem auto;max-width:240px}
+.gdiv::before,.gdiv::after{content:'';flex:1;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent)}
+.rdd{width:7px;height:7px;background:var(--red);transform:rotate(45deg);flex-shrink:0}
+.rv{opacity:0;transform:translateY(36px);transition:opacity .75s ease,transform .75s ease}
+.rv.in{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+
+/* ══════════════════════════════════════════
+   HERO
+══════════════════════════════════════════ */
+#hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden}
+.hbg2{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1800&q=90') center/cover no-repeat}
+.hov{position:absolute;inset:0;background:linear-gradient(160deg,rgba(14,14,14,.8) 0%,rgba(92,14,14,.5) 50%,rgba(14,14,14,.85) 100%)}
+.hov::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 35%,rgba(92,14,14,.38) 100%)}
+.hc{position:relative;z-index:2;max-width:860px;padding:0 5%;width:100%}
+.htag{font-family:var(--fa);font-size:clamp(.46rem,1.2vw,.6rem);letter-spacing:.45em;color:var(--gold);margin-bottom:1.8rem;opacity:0;transform:translateY(20px);animation:fu .8s forwards .3s}
+.htit{font-family:var(--fd);font-size:clamp(2.6rem,9vw,7.5rem);font-weight:300;line-height:1.05;color:var(--ivory);margin-bottom:1.4rem;opacity:0;transform:translateY(30px);animation:fu 1s forwards .6s}
+.htit em{font-style:italic;color:var(--gold)}
+.hsub{font-size:clamp(.8rem,1.8vw,1.05rem);font-weight:300;letter-spacing:.1em;color:var(--th);max-width:530px;margin:0 auto 2.6rem;opacity:0;transform:translateY(20px);animation:fu .8s forwards .9s;line-height:1.78}
+.hctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fu .8s forwards 1.2s}
+.hscr{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:0;animation:fu .8s forwards 1.6s}
+.hscr span{font-size:.5rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(248,243,234,.38)}
+.sline{width:1px;height:36px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sp 2s infinite}
+.hbdg{position:absolute;bottom:3rem;right:5%;z-index:2;display:flex;flex-direction:column;gap:.6rem;opacity:0;animation:fi 1s forwards 1.8s}
+.bdg{display:flex;align-items:center;gap:.6rem;padding:.55rem .9rem;background:rgba(14,14,14,.7);border:1px solid rgba(212,168,67,.2);border-radius:3px;backdrop-filter:blur(8px)}
+.bn{font-family:var(--fd);font-size:1.35rem;font-weight:300;color:var(--gold);line-height:1}
+.bl2{font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(248,243,234,.42)}
+
+/* ══════════════════════════════════════════
+   ABOUT
+══════════════════════════════════════════ */
+#about{background:var(--cream);padding:clamp(4rem,10vw,9rem) 5%;color:var(--noir)}
+.ag{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,6rem);align-items:center}
+.ah{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,3rem);font-weight:400;line-height:1.2;color:var(--noir);margin-bottom:1.8rem}
+.ah em{font-style:italic;color:var(--red)}
+.ab{font-size:clamp(.8rem,1.3vw,.93rem);font-weight:300;line-height:1.9;color:rgba(14,14,14,.65);margin-bottom:1.3rem}
+.ast{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(139,26,26,.16);border-radius:3px;overflow:hidden;margin-top:2.5rem}
+.as{padding:1.2rem .7rem;text-align:center;border-right:1px solid rgba(139,26,26,.1)}
+.as:last-child{border-right:none}
+.as .n{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:300;color:var(--red);line-height:1}
+.as .l{font-size:clamp(.46rem,.9vw,.58rem);letter-spacing:.2em;text-transform:uppercase;color:rgba(14,14,14,.38);margin-top:4px}
+.aiw{position:relative}
+.aif{border:1px solid rgba(212,168,67,.32);padding:10px;border-radius:3px;position:relative}
+.aif img{width:100%;height:clamp(300px,45vw,500px);object-fit:cover;border-radius:2px}
+.arb{position:absolute;top:1.5rem;right:-.5rem;background:var(--rg);padding:.38rem .9rem;font-family:var(--fa);font-size:.52rem;letter-spacing:.18em;color:var(--ivory);z-index:2}
+.arb::after{content:'';position:absolute;bottom:-5px;right:0;border:2.5px solid transparent;border-top-color:var(--red-d);border-right-color:var(--red-d)}
+.abd{position:absolute;bottom:-1.1rem;left:-1.1rem;background:var(--red-d);border:1px solid rgba(212,168,67,.28);padding:.9rem 1.2rem;border-radius:3px}
+.abd .n{font-family:var(--fd);font-size:2rem;font-weight:300;color:var(--gold);line-height:1}
+.abd .l{font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(248,243,234,.52);margin-top:4px}
+
+/* ══════════════════════════════════════════
+   ROOMS
+══════════════════════════════════════════ */
+#rooms{background:var(--n2);padding:clamp(4rem,10vw,9rem) 5%}
+.rg{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.rc{position:relative;overflow:hidden;background:var(--n3);transition:var(--tr);cursor:pointer;display:flex;flex-direction:column;border:none;text-align:left;color:var(--ivory)}
+.rc:hover{transform:translateY(-8px);z-index:2;box-shadow:var(--sd)}
+.rcw{position:relative;overflow:hidden;flex-shrink:0}
+.rci{width:100%;height:clamp(180px,22vw,270px);object-fit:cover;transition:transform .7s cubic-bezier(.25,.46,.45,.94);display:block}
+.rc:hover .rci{transform:scale(1.06)}
+.rtb{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--red-d),var(--gold),var(--red-d));transform:scaleX(0);transition:transform .42s;transform-origin:left}
+.rc:hover .rtb{transform:scaleX(1)}
+.rtag{position:absolute;top:.9rem;left:.9rem;background:var(--rg);padding:.28rem .72rem;font-family:var(--fa);font-size:.5rem;letter-spacing:.18em;color:var(--ivory);border-radius:2px}
+.rb{padding:clamp(1.1rem,2.5vw,1.9rem);display:flex;flex-direction:column;flex:1}
+.rti{font-family:var(--fa);font-size:.52rem;letter-spacing:.28em;color:var(--red-l);margin-bottom:.55rem}
+.rn2{font-family:var(--fd);font-size:clamp(1.1rem,2vw,1.45rem);font-weight:400;color:var(--ivory);margin-bottom:.65rem}
+.rd3{font-size:clamp(.72rem,1.2vw,.82rem);font-weight:300;line-height:1.8;color:var(--tm);margin-bottom:1.2rem;flex:1}
+.rfs{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.rf{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(248,243,234,.36);display:flex;align-items:center;gap:.32rem}
+.rf::before{content:'';width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0}
+.rft{display:flex;align-items:center;justify-content:space-between;padding-top:1.1rem;border-top:1px solid rgba(248,243,234,.07);margin-top:auto}
+.rprice .from{font-size:.68rem;color:rgba(248,243,234,.36)}
+.rprice .amt{font-family:var(--fd);font-size:clamp(1.05rem,2vw,1.3rem);color:var(--gold);font-weight:300}
+.rprice .per{font-size:.65rem;color:rgba(248,243,234,.33)}
+.rct{font-family:var(--fa);font-size:.56rem;letter-spacing:.18em;color:var(--gold);display:flex;align-items:center;gap:.4rem;transition:gap .3s}
+.rc:hover .rct{gap:.8rem}
+
+/* ══════════════════════════════════════════
+   POOLS
+══════════════════════════════════════════ */
+#pools{position:relative;padding:clamp(3.5rem,8vw,7rem) 5%;overflow:hidden}
+.pbg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1800&q=85') center/cover no-repeat}
+.pbg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(14,14,14,.9) 0%,rgba(92,14,14,.65) 55%,rgba(14,14,14,.9) 100%)}
+.pi2{position:relative;z-index:2;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.ph{font-family:var(--fd);font-size:clamp(1.8rem,4vw,3rem);font-weight:300;color:var(--ivory);margin-bottom:1rem;line-height:1.15}
+.ph em{font-style:italic;color:var(--gold)}
+.pb2{font-size:clamp(.78rem,1.3vw,.9rem);font-weight:300;line-height:1.88;color:var(--th);margin-bottom:1.8rem}
+.pl{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.pi3{padding:1rem;border:1px solid rgba(212,168,67,.16);border-radius:3px;background:rgba(14,14,14,.52);backdrop-filter:blur(6px);transition:var(--tr)}
+.pi3:hover{border-color:var(--gold);background:rgba(212,168,67,.06)}
+.pi3 .ico{font-size:1.3rem;margin-bottom:.45rem}
+.pi3 .t{font-family:var(--fd);font-size:.92rem;color:var(--gold);margin-bottom:.2rem}
+.pi3 .d{font-size:.7rem;font-weight:300;color:var(--tm)}
+
+/* ══════════════════════════════════════════
+   DINING
+══════════════════════════════════════════ */
+#dining{background:var(--noir);padding:clamp(4rem,10vw,9rem) 5%}
+.dl{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:3px}
+.dc{display:grid;grid-template-columns:400px 1fr;background:var(--n2);overflow:hidden;transition:var(--tr)}
+.dc:nth-child(even){grid-template-columns:1fr 400px}
+.dc:nth-child(even) .di{order:2}
+.dc:nth-child(even) .dct{order:1}
+.dc:hover{box-shadow:0 4px 40px rgba(139,26,26,.22)}
+.di{position:relative;overflow:hidden;flex-shrink:0}
+.di img{width:100%;height:clamp(220px,28vw,360px);object-fit:cover;transition:transform .7s cubic-bezier(.25,.46,.45,.94);display:block}
+.dc:hover .di img{transform:scale(1.05)}
+.dio{position:absolute;inset:0;background:linear-gradient(to right,rgba(14,14,14,.28),transparent)}
+.dc:nth-child(even) .dio{background:linear-gradient(to left,rgba(14,14,14,.28),transparent)}
+.dct{padding:clamp(1.8rem,3.5vw,3rem);display:flex;flex-direction:column;justify-content:center}
+.dtag{font-family:var(--fa);font-size:.52rem;letter-spacing:.28em;color:var(--red-l);margin-bottom:.65rem}
+.dn{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:300;color:var(--ivory);margin-bottom:.95rem}
+.dd{font-size:clamp(.76rem,1.2vw,.86rem);font-weight:300;line-height:1.88;color:var(--tm);margin-bottom:1.1rem}
+.dh{font-size:.68rem;letter-spacing:.1em;color:rgba(248,243,234,.28);margin-bottom:1.3rem}
+.dlk{font-family:var(--fa);font-size:.58rem;letter-spacing:.2em;color:var(--gold);display:inline-flex;align-items:center;gap:.38rem;transition:gap .3s;cursor:pointer;background:none;border:none}
+.dlk:hover{gap:.9rem;color:var(--gold-l)}
+
+/* ══════════════════════════════════════════
+   AMENITIES — image cards
+══════════════════════════════════════════ */
+#amenities{background:var(--noir);padding:clamp(4rem,10vw,9rem) 5%}
+.amg{max-width:1200px;margin:clamp(2.5rem,5vw,4rem) auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.amc{position:relative;overflow:hidden;cursor:default;aspect-ratio:4/3}
+.amc img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
+.amc:hover img{transform:scale(1.07)}
+.amc-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(14,14,14,.92) 0%,rgba(92,14,14,.25) 55%,transparent 75%)}
+.amc-bar{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--red-d),var(--gold),var(--red-d));transform:scaleX(0);transition:transform .42s;transform-origin:left}
+.amc:hover .amc-bar{transform:scaleX(1)}
+.amc-body{position:absolute;bottom:0;left:0;right:0;padding:clamp(1.1rem,2.5vw,1.7rem);transform:translateY(6px);transition:transform .4s}
+.amc:hover .amc-body{transform:translateY(0)}
+.amc-tag{display:inline-block;font-family:var(--fa);font-size:.46rem;letter-spacing:.22em;color:var(--gold);border:1px solid rgba(212,168,67,.4);padding:.16rem .52rem;border-radius:2px;margin-bottom:.45rem}
+.amt2{font-family:var(--fd);font-size:clamp(1rem,1.8vw,1.2rem);font-weight:400;color:var(--ivory);margin-bottom:.4rem}
+.amd{font-size:clamp(.68rem,1.1vw,.78rem);font-weight:300;line-height:1.75;color:rgba(248,243,234,.68);max-height:0;overflow:hidden;transition:max-height .4s ease}
+.amc:hover .amd{max-height:150px}
+.app{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;margin-top:clamp(2rem,4vw,3rem);max-width:1200px;margin-left:auto;margin-right:auto}
+.apl{padding:.4rem 1rem;border:1px solid rgba(212,168,67,.15);border-radius:20px;font-size:.68rem;color:rgba(248,243,234,.42);letter-spacing:.08em;transition:var(--tr)}
+.apl:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ══════════════════════════════════════════
+   GALLERY
+══════════════════════════════════════════ */
+#gallery{background:var(--n2);padding:clamp(4rem,10vw,9rem) 5%}
+.gg2{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:250px 250px;gap:3px}
+.gi{position:relative;overflow:hidden;cursor:pointer}
+.gi:nth-child(1){grid-column:1/8;grid-row:1}
+.gi:nth-child(2){grid-column:8/13;grid-row:1}
+.gi:nth-child(3){grid-column:1/5;grid-row:2}
+.gi:nth-child(4){grid-column:5/9;grid-row:2}
+.gi:nth-child(5){grid-column:9/13;grid-row:2}
+.gi img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.25,.46,.45,.94);display:block}
+.gi:hover img{transform:scale(1.08)}
+.gov{position:absolute;inset:0;background:linear-gradient(to top,rgba(14,14,14,.88) 0%,transparent 60%);opacity:0;transition:opacity .4s;display:flex;align-items:flex-end;padding:1.1rem 1.3rem}
+.gi:hover .gov{opacity:1}
+.gov span{font-family:var(--fa);font-size:.6rem;letter-spacing:.22em;color:var(--gold)}
+.gc{text-align:center;margin-top:2.5rem}
+
+/* ══════════════════════════════════════════
+   TESTIMONIALS
+══════════════════════════════════════════ */
+#testi{background:var(--red-d);padding:clamp(4rem,10vw,9rem) 5%;position:relative;overflow:hidden}
+#testi::before{content:'\201C';position:absolute;top:-3rem;left:50%;transform:translateX(-50%);font-family:var(--fd);font-size:clamp(12rem,22vw,20rem);font-weight:300;color:rgba(212,168,67,.07);line-height:1;pointer-events:none;user-select:none}
+.tg{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;position:relative;z-index:2}
+.tc{background:rgba(248,243,234,.05);padding:clamp(1.4rem,3vw,2.4rem);border-top:2px solid transparent;transition:var(--tr)}
+.tc:hover{background:rgba(248,243,234,.09);border-top-color:var(--gold);transform:translateY(-6px)}
+.tq{font-family:var(--fd);font-size:3.2rem;color:var(--gold);line-height:.72;margin-bottom:1.1rem;opacity:.65}
+.tt{font-family:var(--fd);font-size:clamp(.9rem,1.5vw,1rem);font-style:italic;font-weight:300;line-height:1.82;color:rgba(248,243,234,.82);margin-bottom:1.7rem}
+.ta{font-family:var(--fa);font-size:.6rem;letter-spacing:.2em;color:var(--gold)}
+.tr2{font-size:.68rem;font-weight:300;color:rgba(248,243,234,.36);margin-top:.3rem}
+.trat{text-align:center;margin-top:2.8rem;position:relative;z-index:2}
+.sts{color:var(--gold);letter-spacing:4px;font-size:1.05rem}
+.rtxt{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(248,243,234,.38);margin-top:.5rem}
+
+/* ══════════════════════════════════════════
+   BOOKING / CONTACT
+══════════════════════════════════════════ */
+#booking{background:var(--cream);color:var(--noir);padding:clamp(4rem,10vw,9rem) 5%}
+.bkg{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(3rem,6vw,6rem);align-items:start}
+.bkh{font-family:var(--fd);font-size:clamp(1.7rem,3.5vw,2.8rem);font-weight:400;color:var(--noir);margin-bottom:2.3rem;line-height:1.2}
+.bkh em{font-style:italic;color:var(--red)}
+.fg{margin-bottom:1.35rem}
+.fr2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.fl{display:block;font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(14,14,14,.42);margin-bottom:.38rem}
+.fi,.fsel,.fta{width:100%;padding:.82rem 0;background:transparent;border:none;border-bottom:1px solid rgba(14,14,14,.16);font-family:var(--fb);font-size:.87rem;color:var(--noir);transition:border-color .3s;outline:none;-webkit-appearance:none;appearance:none}
+.fi:focus,.fsel:focus,.fta:focus{border-bottom-color:var(--red)}
+.fta{resize:vertical;min-height:88px}
+.fsel{cursor:pointer;background:transparent}
+.bsub{width:100%;padding:1rem;margin-top:.5rem;background:var(--rg);color:var(--ivory);font-family:var(--fa);font-size:.65rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;border-radius:2px;transition:var(--tr);border:none;cursor:pointer}
+.bsub:hover{transform:translateY(-2px);box-shadow:var(--sr)}
+.bsub:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.fn{font-size:.68rem;font-weight:300;color:rgba(14,14,14,.36);text-align:center;margin-top:.75rem;line-height:1.6}
+.cside{padding-top:.5rem}
+.chead{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,1.8rem);font-weight:300;color:var(--noir);margin-bottom:1.8rem}
+.chead em{font-style:italic;color:var(--red)}
+.ci{display:flex;gap:.85rem;align-items:flex-start;margin-bottom:1.35rem}
+.cico{width:36px;height:36px;flex-shrink:0;background:rgba(139,26,26,.08);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.82rem}
+.clbl{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(14,14,14,.36);margin-bottom:.2rem}
+.cv{font-size:.86rem;font-weight:400;color:var(--noir)}
+.cv a{color:var(--noir);transition:color .3s}
+.cv a:hover{color:var(--red)}
+.mpb{margin-top:1.7rem;padding:1.4rem;background:var(--red-d);border:1px solid rgba(212,168,67,.18);border-radius:3px;text-align:center;cursor:pointer;transition:var(--tr);display:block}
+.mpb:hover{border-color:var(--gold);background:var(--red)}
+.mpb .mpi{font-size:1.5rem;margin-bottom:.38rem}
+.mpb .mpt{font-family:var(--fa);font-size:.58rem;letter-spacing:.2em;color:var(--gold)}
+.srow{display:flex;gap:.65rem;margin-top:1.7rem;flex-wrap:wrap}
+.sb{width:37px;height:37px;border:1px solid rgba(139,26,26,.18);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;color:rgba(14,14,14,.38);transition:var(--tr)}
+.sb:hover{border-color:var(--red);color:var(--red);transform:translateY(-3px)}
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+footer{background:var(--noir);border-top:1px solid rgba(212,168,67,.1);padding:clamp(3rem,8vw,5rem) 5% clamp(1.5rem,3vw,2rem)}
+.fg2{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:clamp(2rem,4vw,4rem);margin-bottom:2.8rem}
+.fbl{font-family:var(--fa);font-size:clamp(1rem,2vw,1.4rem);font-weight:600;color:var(--gold);letter-spacing:.18em;display:block;margin-bottom:.3rem}
+.fbs{font-size:.5rem;letter-spacing:.32em;color:rgba(212,168,67,.48);text-transform:uppercase}
+.fbd{font-size:.78rem;font-weight:300;line-height:1.82;color:rgba(248,243,234,.32);margin-top:1rem;max-width:240px}
+.fc2 h4{font-family:var(--fa);font-size:.58rem;letter-spacing:.3em;color:var(--gold);margin-bottom:1.2rem}
+.fc2 ul{list-style:none}
+.fc2 li{margin-bottom:.72rem}
+.fc2 a,.fc2 button{font-size:.78rem;font-weight:300;color:rgba(248,243,234,.35);transition:color .3s;background:none;border:none;cursor:pointer;font-family:var(--fb);padding:0;text-align:left}
+.fc2 a:hover,.fc2 button:hover{color:var(--gold)}
+.fbot{max-width:1200px;margin:0 auto;padding-top:1.7rem;border-top:1px solid rgba(248,243,234,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.fcp{font-size:.67rem;font-weight:300;color:rgba(248,243,234,.2);letter-spacing:.07em}
+.fst{display:flex;align-items:center;gap:.5rem}
+.fst .sts{font-size:.72rem;letter-spacing:2px}
+.fst span:last-child{font-size:.65rem;color:rgba(248,243,234,.25)}
+
+/* ══════════════════════════════════════════
+   ROOM DETAIL PAGE
+══════════════════════════════════════════ */
+.room-page-wrap{padding-top:4.5rem}
+.rh{position:relative;min-height:72vh;display:flex;align-items:flex-end;overflow:hidden}
+.rh-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:background-image .3s}
+.rh-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(14,14,14,1) 0%,rgba(14,14,14,.45) 40%,rgba(92,14,14,.18) 70%,transparent 100%)}
+.rh-content{position:relative;z-index:2;padding:0 5% 3.5rem;width:100%}
+.rh-tag{font-family:var(--fa);font-size:.58rem;letter-spacing:.38em;color:var(--gold);margin-bottom:.8rem}
+.rh-name{font-family:var(--fd);font-size:clamp(2.2rem,7vw,5rem);font-weight:300;line-height:1.05;color:var(--ivory);margin-bottom:.7rem}
+.rh-name em{font-style:italic;color:var(--gold)}
+.rh-sub{font-size:clamp(.82rem,1.5vw,1rem);font-weight:300;color:var(--tm);letter-spacing:.1em}
+#rthumbs{background:var(--n2);padding:.8rem 5%;display:flex;gap:3px;overflow-x:auto}
+.rthumb{width:clamp(80px,10vw,140px);height:clamp(55px,7vw,88px);object-fit:cover;cursor:pointer;opacity:.55;transition:opacity .3s;flex-shrink:0;border:2px solid transparent;display:block}
+.rthumb:hover,.rthumb.active{opacity:1;border-color:var(--gold)}
+#rmain{max-width:1200px;margin:0 auto;padding:4rem 5%;display:grid;grid-template-columns:1fr 350px;gap:4rem;align-items:start}
+.rdesc h2{font-family:var(--fd);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:300;color:var(--ivory);margin-bottom:1.5rem}
+.rdesc h2 em{font-style:italic;color:var(--gold)}
+.rdesc p{font-size:clamp(.82rem,1.3vw,.92rem);font-weight:300;line-height:1.92;color:rgba(248,243,234,.65);margin-bottom:1.2rem}
+.sdiv{display:flex;align-items:center;gap:.8rem;margin:2.5rem 0}
+.sdiv::before,.sdiv::after{content:'';flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(212,168,67,.3),transparent)}
+.rftitle{font-family:var(--fa);font-size:.6rem;letter-spacing:.3em;color:var(--gold);margin-bottom:1.2rem}
+.rfeats{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-bottom:2rem}
+.rfeat{display:flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:300;color:rgba(248,243,234,.58);padding:.6rem .8rem;border:1px solid rgba(212,168,67,.1);border-radius:2px;transition:var(--tr)}
+.rfeat:hover{border-color:rgba(212,168,67,.28);color:var(--ivory)}
+.rfeat::before{content:'';width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0}
+.rincl-list{list-style:none;margin-bottom:2rem}
+.rincl-list li{display:flex;align-items:center;gap:.7rem;padding:.65rem 0;border-bottom:1px solid rgba(248,243,234,.06);font-size:.82rem;font-weight:300;color:rgba(248,243,234,.62)}
+.rincl-list li::before{content:'✓';color:var(--gold);font-size:.75rem;flex-shrink:0}
+.rpol{padding:1.5rem;border:1px solid rgba(212,168,67,.1);border-radius:3px;background:rgba(212,168,67,.03)}
+.rpol-list{list-style:none;margin-top:.8rem}
+.rpol-list li{font-size:.78rem;font-weight:300;color:rgba(248,243,234,.48);padding:.38rem 0;display:flex;align-items:flex-start;gap:.6rem}
+.rpol-list li::before{content:'·';color:var(--gold);flex-shrink:0}
+.rgal{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:1rem}
+.rgal-item{overflow:hidden;aspect-ratio:4/3;cursor:pointer}
+.rgal-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s;display:block}
+.rgal-item:hover img{transform:scale(1.05)}
+/* BOOKING SIDEBAR */
+.rbook{position:sticky;top:5.5rem}
+.rbc{background:var(--n2);border:1px solid rgba(212,168,67,.18);border-radius:3px;overflow:hidden}
+.rbc-hdr{background:var(--rg);padding:1.4rem}
+.rbc-hdr .tag{font-family:var(--fa);font-size:.5rem;letter-spacing:.25em;color:rgba(248,243,234,.7);margin-bottom:.3rem}
+.rbc-hdr .rname{font-family:var(--fd);font-size:1.15rem;font-weight:300;color:var(--ivory)}
+.rbc-price{padding:1.4rem;border-bottom:1px solid rgba(248,243,234,.07)}
+.rbc-price .from{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(248,243,234,.4)}
+.rbc-price .amount{font-family:var(--fd);font-size:2.1rem;font-weight:300;color:var(--gold);line-height:1}
+.rbc-price .per{font-size:.7rem;color:rgba(248,243,234,.35)}
+.rbc-form{padding:1.4rem}
+.rfg{margin-bottom:1rem}
+.rfl{display:block;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(248,243,234,.38);margin-bottom:.32rem}
+.rfi,.rfsel{width:100%;padding:.68rem .8rem;background:rgba(255,255,255,.04);border:1px solid rgba(248,243,234,.1);border-radius:2px;font-family:var(--fb);font-size:.82rem;color:var(--ivory);outline:none;transition:border-color .3s;-webkit-appearance:none;appearance:none}
+.rfi:focus,.rfsel:focus{border-color:var(--gold)}
+.rfrow{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.rfsel{cursor:pointer;background:rgba(14,14,14,.6)}
+.rfsel option{background:var(--n3)}
+.rbk-btn{width:100%;padding:.95rem;background:var(--rg);color:var(--ivory);font-family:var(--fa);font-size:.62rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;border-radius:2px;cursor:pointer;border:none;transition:var(--tr);margin-top:.4rem}
+.rbk-btn:hover{transform:translateY(-2px);box-shadow:var(--sr)}
+.rbk-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.rbc-wa{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.9rem 1.4rem;background:rgba(37,211,102,.08);border-top:1px solid rgba(37,211,102,.12);font-size:.7rem;color:rgba(37,211,102,.8);cursor:pointer;transition:background .3s}
+.rbc-wa:hover{background:rgba(37,211,102,.14)}
+.rbc-note{padding:.9rem 1.4rem;text-align:center;font-size:.66rem;font-weight:300;color:rgba(248,243,234,.28);border-top:1px solid rgba(248,243,234,.06)}
+/* OTHER ROOMS */
+#rother{background:var(--n2);padding:4rem 5%}
+.ro-hdr{max-width:1200px;margin:0 auto 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.ro-title{font-family:var(--fd);font-size:clamp(1.5rem,3vw,2rem);font-weight:300;color:var(--ivory)}
+.ro-title em{font-style:italic;color:var(--gold)}
+.ro-all{font-family:var(--fa);font-size:.58rem;letter-spacing:.2em;color:var(--gold);cursor:pointer;background:none;border:none}
+.ro-all:hover{color:var(--gold-l)}
+.ro-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.ro-card{position:relative;overflow:hidden;background:var(--n3);display:flex;flex-direction:column;transition:var(--tr);cursor:pointer;border:none;text-align:left;color:var(--ivory)}
+.ro-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.ro-card img{width:100%;height:clamp(140px,16vw,200px);object-fit:cover;transition:transform .6s;display:block}
+.ro-card:hover img{transform:scale(1.05)}
+.ro-bar{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--red-d),var(--gold),var(--red-d));transform:scaleX(0);transition:transform .4s;transform-origin:left}
+.ro-card:hover .ro-bar{transform:scaleX(1)}
+.ro-body{padding:1rem}
+.ro-tag{font-family:var(--fa);font-size:.48rem;letter-spacing:.25em;color:var(--red-l);margin-bottom:.38rem}
+.ro-name{font-family:var(--fd);font-size:clamp(.95rem,1.8vw,1.15rem);font-weight:300;color:var(--ivory);margin-bottom:.3rem}
+.ro-price{font-family:var(--fd);font-size:.88rem;color:var(--gold);font-weight:300}
+/* ROOM FOOTER */
+.rfooter{background:var(--noir);border-top:1px solid rgba(212,168,67,.08);padding:1.8rem 5%;text-align:center}
+.rfooter p{font-size:.68rem;font-weight:300;color:rgba(248,243,234,.2)}
+.rfooter button{color:rgba(212,168,67,.5);background:none;border:none;cursor:pointer;font-size:.68rem;font-family:var(--fb);transition:color .3s}
+.rfooter button:hover{color:var(--gold)}
+
+/* ══════════════════════════════════════════
+   LIGHTBOX & NOTIFICATION
+══════════════════════════════════════════ */
+.lbx{display:none;position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.97);align-items:center;justify-content:center}
+.lbx.op{display:flex}
+.lbx img{max-width:92vw;max-height:88vh;object-fit:contain;border:1px solid rgba(212,168,67,.18)}
+.lbxc{position:absolute;top:1rem;right:1.5rem;font-size:2rem;color:rgba(248,243,234,.45);cursor:pointer;line-height:1;transition:color .3s;font-family:sans-serif}
+.lbxc:hover{color:var(--gold)}
+.ntf{position:fixed;bottom:1.5rem;right:1.5rem;max-width:min(300px,90vw);background:var(--red-d);border:1px solid var(--gold);border-radius:3px;padding:1.1rem 1.4rem;z-index:2000;transform:translateY(120px);opacity:0;transition:var(--tr);font-size:.8rem;color:var(--ivory);line-height:1.65;pointer-events:none}
+.ntf.sh{transform:translateY(0);opacity:1;pointer-events:auto}
+.ntf strong{color:var(--gold)}
+
+/* ══════════════════════════════════════════
+   KEYFRAMES
+══════════════════════════════════════════ */
+@keyframes fu{to{opacity:1;transform:translateY(0)}}
+@keyframes fi{to{opacity:1}}
+@keyframes sp{0%,100%{opacity:1}50%{opacity:.28;transform:scaleY(.55)}}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media(max-width:1100px){
+  .nv{gap:1rem}.ag{grid-template-columns:1fr}.aiw{max-width:580px;margin:0 auto}
+  .ast{grid-template-columns:repeat(4,1fr)}.rg{grid-template-columns:1fr 1fr}
+  .pi2{grid-template-columns:1fr}
+  .dc,.dc:nth-child(even){grid-template-columns:1fr}
+  .dc:nth-child(even) .di,.dc:nth-child(even) .dct{order:unset}
+  .di img{height:clamp(200px,35vw,280px)}
+  .gg2{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gi{grid-column:auto!important;grid-row:auto!important}.gi img{height:200px}
+  .tg{grid-template-columns:1fr 1fr}.bkg{grid-template-columns:1fr}
+  .fg2{grid-template-columns:1fr 1fr;gap:2.2rem}.hbdg{display:none}
+  #rmain{grid-template-columns:1fr}.rbook{position:static}
+  .ro-grid{grid-template-columns:1fr 1fr 1fr}
+}
+@media(max-width:768px){
+  .nv,.bnr{display:none}.hbg{display:flex}.mm{display:flex}
+  .rg{grid-template-columns:1fr}.amg{grid-template-columns:1fr 1fr}
+  .tg{grid-template-columns:1fr}.gg2{grid-template-columns:1fr 1fr;grid-auto-rows:185px}
+  .fg2{grid-template-columns:1fr 1fr}.fbot{flex-direction:column;text-align:center}
+  .fr2{grid-template-columns:1fr}.ast{grid-template-columns:repeat(2,1fr)}
+  .abd{left:-.45rem;bottom:-.45rem}.pl{grid-template-columns:1fr 1fr}
+  .hscr{display:none}.bkg{gap:2.5rem}.rfeats{grid-template-columns:1fr 1fr}
+  .ro-grid{grid-template-columns:1fr 1fr}.rfrow{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .amg{grid-template-columns:1fr}.gg2{grid-template-columns:1fr;grid-auto-rows:220px}
+  .pl{grid-template-columns:1fr}.fg2{grid-template-columns:1fr}
+  .ast{grid-template-columns:repeat(2,1fr)}.hctas{flex-direction:column;align-items:center}
+  .bp,.bo,.bc{width:100%;text-align:center}.di img{height:200px}
+  .tg{grid-template-columns:1fr}.rfeats{grid-template-columns:1fr}.ro-grid{grid-template-columns:1fr}
+  .rgal{grid-template-columns:1fr}
+}
+@media(max-width:360px){
+  .htit{font-size:clamp(2rem,11vw,2.8rem)}.nl-m{font-size:.92rem}
+  #nb,#nb.sc{padding:.85rem 4%}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     SHARED LIGHTBOX & NOTIFICATION
+══════════════════════════════════════════ -->
+<div class="lbx" id="lbx">
+  <span class="lbxc" id="lbxc">&times;</span>
+  <img id="lbi" src="" alt="Image">
+</div>
+<div class="ntf" id="ntf">
+  <strong id="ntf-t"></strong><br>
+  <span id="ntf-b"></span>
+</div>
+
+<!-- MOBILE OVERLAY & MENU -->
+<div class="mlo" id="mlo"></div>
+<nav class="mm" id="mm"></nav>
+
+<!-- SHARED NAVBAR -->
+<header id="nb" role="banner">
+  <div class="nl" onclick="goHome()" aria-label="Empire Luxury Hotel">
+    <span class="nl-m">EMPIRE</span>
+    <span class="nl-s">Luxury Hotel</span>
+  </div>
+  <nav class="nv" role="navigation" id="main-nav"></nav>
+  <div class="nr">
+    <button class="lb on" id="btn-en" onclick="setLang('en')">EN</button>
+    <button class="lb" id="btn-fr" onclick="setLang('fr')">FR</button>
+    <button class="bnr" id="nav-reserve" onclick="goSection('booking')"></button>
+    <div class="hbg" id="hbg" role="button" tabindex="0" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════
+     PAGE: MAIN SITE
+══════════════════════════════════════════ -->
+<div class="page active" id="page-home">
+
+<!-- HERO -->
+<section id="hero" aria-label="Empire Luxury Hotel">
+  <div class="hbg2"></div>
+  <div class="hov"></div>
+  <div class="hc">
+    <p class="htag" id="hero-tag"></p>
+    <h1 class="htit" id="hero-title"></h1>
+    <p class="hsub" id="hero-sub"></p>
+    <div class="hctas">
+      <button class="bp" id="hero-cta1" onclick="goSection('booking')"></button>
+      <button class="bo" id="hero-cta2" onclick="goSection('about')"></button>
+    </div>
+  </div>
+  <div class="hscr" aria-hidden="true">
+    <div class="sline"></div>
+    <span id="hero-scroll"></span>
+  </div>
+  <div class="hbdg" aria-hidden="true">
+    <div class="bdg"><div><div class="bn">03</div><div class="bl2" id="b-pools"></div></div></div>
+    <div class="bdg"><div><div class="bn">24h</div><div class="bl2" id="b-conc"></div></div></div>
+    <div class="bdg"><div><div class="bn" style="font-size:.9rem;letter-spacing:2px">★★★★★</div><div class="bl2" id="b-star"></div></div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-h">
+  <div class="ag">
+    <div class="rv">
+      <p class="slbl dk" style="justify-content:flex-start" id="about-lbl"></p>
+      <h2 class="ah" id="about-h"></h2>
+      <p class="ab" id="about-p1"></p>
+      <p class="ab" id="about-p2"></p>
+      <div class="gdiv"><div class="rdd"></div></div>
+      <div class="ast">
+        <div class="as"><div class="n">3</div><div class="l" id="st-pools"></div></div>
+        <div class="as"><div class="n">24h</div><div class="l" id="st-svc"></div></div>
+        <div class="as"><div class="n">✈</div><div class="l" id="st-trans"></div></div>
+        <div class="as"><div class="n">SPA</div><div class="l" id="st-spa"></div></div>
+      </div>
+    </div>
+    <div class="aiw rv d2">
+      <div class="aif">
+        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=900&q=85" alt="Empire Luxury Hotel Interior" loading="lazy">
+        <div class="arb" id="about-rib"></div>
+      </div>
+      <div class="abd"><div class="n">★★★★★</div><div class="l" id="about-bdg"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ROOMS -->
+<section id="rooms" aria-labelledby="rooms-h">
+  <div class="sec-hdr rv">
+    <p class="slbl" id="rooms-lbl"></p>
+    <h2 class="sh" id="rooms-h"></h2>
+    <p class="ss" id="rooms-sub"></p>
+  </div>
+  <div class="rg" id="rooms-grid"></div>
+</section>
+
+<!-- POOLS -->
+<section id="pools" aria-label="Pools">
+  <div class="pbg"></div>
+  <div class="pi2">
+    <div class="rv">
+      <p class="slbl" style="justify-content:flex-start" id="pools-lbl"></p>
+      <h2 class="ph" id="pools-h"></h2>
+      <p class="pb2" id="pools-body"></p>
+      <button class="bp" id="pools-cta" onclick="goSection('booking')"></button>
+    </div>
+    <div class="pl rv d2">
+      <div class="pi3"><div class="ico">🏊</div><div class="t" id="p1-t"></div><div class="d" id="p1-d"></div></div>
+      <div class="pi3"><div class="ico">🌊</div><div class="t" id="p2-t"></div><div class="d" id="p2-d"></div></div>
+      <div class="pi3"><div class="ico">👶</div><div class="t" id="p3-t"></div><div class="d" id="p3-d"></div></div>
+      <div class="pi3"><div class="ico">♿</div><div class="t" id="p4-t"></div><div class="d" id="p4-d"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DINING -->
+<section id="dining" aria-labelledby="dining-h">
+  <div class="sec-hdr rv">
+    <p class="slbl" id="dining-lbl"></p>
+    <h2 class="sh" id="dining-h"></h2>
+    <p class="ss" id="dining-sub"></p>
+  </div>
+  <div class="dl">
+    <article class="dc rv">
+      <div class="di"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=85" alt="L'Empire Restaurant" loading="lazy"><div class="dio"></div></div>
+      <div class="dct"><p class="dtag" id="d1-tag"></p><h3 class="dn">L'Empire Restaurant</h3><p class="dd" id="d1-desc"></p><p class="dh" id="d1-hrs"></p><button class="dlk" onclick="goSection('booking')" id="d1-cta"></button></div>
+    </article>
+    <article class="dc rv d1">
+      <div class="di"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=85" alt="Le Bois Café" loading="lazy"><div class="dio"></div></div>
+      <div class="dct"><p class="dtag" id="d2-tag"></p><h3 class="dn">Le Bois Café</h3><p class="dd" id="d2-desc"></p><p class="dh" id="d2-hrs"></p><button class="dlk" onclick="goSection('booking')" id="d2-cta"></button></div>
+    </article>
+    <article class="dc rv d2">
+      <div class="di"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=85" alt="Ciel Rooftop Bar" loading="lazy"><div class="dio"></div></div>
+      <div class="dct"><p class="dtag" id="d3-tag"></p><h3 class="dn">Ciel Rooftop Bar</h3><p class="dd" id="d3-desc"></p><p class="dh" id="d3-hrs"></p><button class="dlk" onclick="goSection('booking')" id="d3-cta"></button></div>
+    </article>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section id="amenities" aria-labelledby="am-h">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="rv sec-hdr">
+      <p class="slbl" id="am-lbl"></p>
+      <h2 class="sh" id="am-h"></h2>
+    </div>
+    <div class="amg">
+      <div class="amc rv"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=700&q=85" alt="Spa" loading="lazy"><div class="amc-ov"></div><div class="amc-bar"></div><div class="amc-body"><div class="amc-tag" id="am1-tag"></div><div class="amt2" id="am1-t"></div><div class="amd" id="am1-d"></div></div></div>
+      <div class="amc rv d1"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700&q=85" alt="Fitness" loading="lazy"><div class="amc-ov"></div><div class="amc-bar"></div><div class="amc-body"><div class="amc-tag" id="am2-tag"></div><div class="amt2" id="am2-t"></div><div class="amd" id="am2-d"></div></div></div>
+      <div class="amc rv d2"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=85" alt="Conference" loading="lazy"><div class="amc-ov"></div><div class="amc-bar"></div><div class="amc-body"><div class="amc-tag" id="am3-tag"></div><div class="amt2" id="am3-t"></div><div class="amd" id="am3-d"></div></div></div>
+      <div class="amc rv"><img src="https://images.unsplash.com/photo-1549294413-26f195200c16?w=700&q=85" alt="Transfer" loading="lazy"><div class="amc-ov"></div><div class="amc-bar"></div><div class="amc-body"><div class="amc-tag" id="am4-tag"></div><div class="amt2" id="am4-t"></div><div class="amd" id="am4-d"></div></div></div>
+      <div class="amc rv d1"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=85" alt="Room Service" loading="lazy"><div class="amc-ov"></div><div class="amc-bar"></div><div class="amc-body"><div class="amc-tag" id="am5-tag"></div><div class="amt2" id="am5-t"></div><div class="amd" id="am5-d"></div></div></div>
+      <div class="amc rv d2"><img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=700&q=85" alt="Concierge" loading="lazy"><div class="amc-ov"></div><div class="amc-bar"></div><div class="amc-body"><div class="amc-tag" id="am6-tag"></div><div class="amt2" id="am6-t"></div><div class="amd" id="am6-d"></div></div></div>
+    </div>
+    <div class="app rv" id="am-pills"></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" aria-labelledby="gallery-h">
+  <div class="sec-hdr rv">
+    <p class="slbl" id="gal-lbl"></p>
+    <h2 class="sh" id="gallery-h"></h2>
+  </div>
+  <div class="gg2 rv" style="max-width:1200px;margin:0 auto">
+    <div class="gi" onclick="openLB('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600')"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1000&q=85" alt="Hotel Exterior" loading="lazy"><div class="gov"><span id="g1-l"></span></div></div>
+    <div class="gi" onclick="openLB('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1400')"><img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=700&q=85" alt="Suite" loading="lazy"><div class="gov"><span id="g2-l"></span></div></div>
+    <div class="gi" onclick="openLB('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400')"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=85" alt="Restaurant" loading="lazy"><div class="gov"><span id="g3-l"></span></div></div>
+    <div class="gi" onclick="openLB('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1400')"><img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=700&q=85" alt="Pool" loading="lazy"><div class="gov"><span id="g4-l"></span></div></div>
+    <div class="gi" onclick="openLB('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1400')"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=700&q=85" alt="Spa" loading="lazy"><div class="gov"><span id="g5-l"></span></div></div>
+  </div>
+  <div class="gc rv"><button class="bc" id="gal-cta" onclick="goSection('booking')"></button></div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testi" aria-labelledby="testi-h">
+  <div class="sec-hdr rv" style="position:relative;z-index:2">
+    <p class="slbl" id="testi-lbl"></p>
+    <h2 class="sh" id="testi-h"></h2>
+  </div>
+  <div class="tg">
+    <div class="tc rv"><div class="tq">"</div><p class="tt" id="t1-txt"></p><div class="ta">Ambassador R. Fonkoua</div><div class="tr2" id="t1-role"></div></div>
+    <div class="tc rv d1"><div class="tq">"</div><p class="tt" id="t2-txt"></p><div class="ta">Dr. Amina Bello</div><div class="tr2">Lagos, Nigeria</div></div>
+    <div class="tc rv d2"><div class="tq">"</div><p class="tt" id="t3-txt"></p><div class="ta">Pierre-Jean Moreau</div><div class="tr2">Paris, France</div></div>
+  </div>
+  <div class="trat rv"><div class="sts">★★★★★</div><div class="rtxt" id="testi-rat"></div></div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking" aria-labelledby="booking-h">
+  <div class="bkg">
+    <div class="rv">
+      <p class="slbl dk" style="justify-content:flex-start" id="bk-lbl"></p>
+      <h2 class="bkh" id="booking-h"></h2>
+      <form id="main-form" onsubmit="submitMain(event)" novalidate>
+        <div class="fg"><label class="fl" id="f-name-l"></label><input class="fi" id="f-name" type="text" required></div>
+        <div class="fr2">
+          <div class="fg"><label class="fl">Email</label><input class="fi" id="f-email" type="email" required></div>
+          <div class="fg"><label class="fl" id="f-phone-l"></label><input class="fi" id="f-phone" type="tel" placeholder="+237 698 80 01 40"></div>
+        </div>
+        <div class="fr2">
+          <div class="fg"><label class="fl" id="f-ci-l"></label><input class="fi" id="f-ci" type="date" required></div>
+          <div class="fg"><label class="fl" id="f-co-l"></label><input class="fi" id="f-co" type="date" required></div>
+        </div>
+        <div class="fr2">
+          <div class="fg"><label class="fl" id="f-room-l"></label><select class="fsel fi" id="f-room"></select></div>
+          <div class="fg"><label class="fl" id="f-guests-l"></label><input class="fi" id="f-guests" type="number" min="1" max="10" placeholder="2"></div>
+        </div>
+        <div class="fg"><label class="fl" id="f-req-l"></label><textarea class="fta fi" id="f-req"></textarea></div>
+        <button type="submit" class="bsub" id="f-submit"></button>
+        <p class="fn" id="f-note"></p>
+      </form>
+    </div>
+    <div class="cside rv d2">
+      <h3 class="chead" id="contact-h"></h3>
+      <div class="ci"><div class="cico">📍</div><div><div class="clbl" id="c-addr-l"></div><div class="cv" id="c-addr-v"></div></div></div>
+      <div class="ci"><div class="cico">📞</div><div><div class="clbl" id="c-ph-l"></div><div class="cv"><a href="tel:+237698800140">+237 698 80 01 40</a></div></div></div>
+      <div class="ci"><div class="cico">✉️</div><div><div class="clbl">Email</div><div class="cv"><a href="mailto:reservations@empireluxuryhotel.cm" style="word-break:break-all">reservations@empireluxuryhotel.cm</a></div></div></div>
+      <div class="ci"><div class="cico">🌐</div><div><div class="clbl" id="c-web-l"></div><div class="cv">www.empireluxuryhotel.cm</div></div></div>
+      <a href="https://maps.google.com/?q=Etoa-Meki+Yaoundé+Cameroon" target="_blank" rel="noopener" class="mpb"><div class="mpi">🗺️</div><div class="mpt" id="map-t"></div></a>
+      <div class="srow">
+        <a href="#" class="sb" aria-label="Instagram">📸</a>
+        <a href="#" class="sb" aria-label="Facebook">👤</a>
+        <a href="#" class="sb" aria-label="Twitter">🐦</a>
+        <a href="#" class="sb" aria-label="TripAdvisor">⭐</a>
+        <a href="https://wa.me/237698800140" class="sb" aria-label="WhatsApp" target="_blank" rel="noopener">💬</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="fg2">
+    <div>
+      <span class="fbl">EMPIRE</span><span class="fbs">Luxury Hotel · Yaoundé</span>
+      <p class="fbd" id="footer-desc"></p>
+      <div class="sts" style="margin-top:1.1rem;font-size:.82rem;letter-spacing:3px">★★★★★</div>
+    </div>
+    <div class="fc2">
+      <h4 id="fn-h"></h4>
+      <ul>
+        <li><button onclick="goSection('about')" id="fn-about"></button></li>
+        <li><button onclick="goSection('rooms')" id="fn-rooms"></button></li>
+        <li><button onclick="goSection('dining')" id="fn-dining"></button></li>
+        <li><button onclick="goSection('amenities')" id="fn-exp"></button></li>
+        <li><button onclick="goSection('gallery')" id="fn-gal"></button></li>
+        <li><button onclick="goSection('booking')" id="fn-book"></button></li>
+      </ul>
+    </div>
+    <div class="fc2">
+      <h4 id="fs-h"></h4>
+      <ul>
+        <li><button onclick="goSection('amenities')" id="fs-spa"></button></li>
+        <li><button onclick="goSection('pools')" id="fs-pools"></button></li>
+        <li><button onclick="goSection('amenities')" id="fs-conf"></button></li>
+        <li><button onclick="goSection('amenities')" id="fs-apt"></button></li>
+        <li><button onclick="goSection('amenities')" id="fs-conc"></button></li>
+        <li><button onclick="goSection('amenities')" id="fs-park"></button></li>
+      </ul>
+    </div>
+    <div class="fc2">
+      <h4 id="fc-h"></h4>
+      <ul>
+        <li style="font-size:.76rem;font-weight:300;color:rgba(248,243,234,.32);margin-bottom:.8rem" id="fc-addr"></li>
+        <li><a href="tel:+237698800140" style="font-size:.78rem;font-weight:300;color:rgba(248,243,234,.35)">+237 698 80 01 40</a></li>
+        <li><a href="mailto:reservations@empireluxuryhotel.cm" style="font-size:.7rem;font-weight:300;color:rgba(248,243,234,.35);word-break:break-all">reservations@empireluxuryhotel.cm</a></li>
+        <li style="margin-top:1rem">
+          <div class="srow" style="gap:.5rem">
+            <a href="#" class="sb" style="border-color:rgba(248,243,234,.08);color:rgba(248,243,234,.28)" aria-label="Instagram">📸</a>
+            <a href="#" class="sb" style="border-color:rgba(248,243,234,.08);color:rgba(248,243,234,.28)" aria-label="Facebook">👤</a>
+            <a href="https://wa.me/237698800140" class="sb" style="border-color:rgba(248,243,234,.08);color:rgba(248,243,234,.28)" aria-label="WhatsApp" target="_blank" rel="noopener">💬</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <p class="fcp" id="footer-copy"></p>
+    <div class="fst"><span class="sts">★★★★★</span><span id="footer-star"></span></div>
+  </div>
+</footer>
+</div><!-- end page-home -->
+
+<!-- ══════════════════════════════════════════
+     PAGE: ROOM DETAIL
+══════════════════════════════════════════ -->
+<div class="page" id="page-room">
+  <div class="room-page-wrap">
+    <section class="rh" id="rh">
+      <div class="rh-bg" id="rh-bg"></div>
+      <div class="rh-ov"></div>
+      <div class="rh-content">
+        <div class="rh-tag" id="rh-tag"></div>
+        <h1 class="rh-name" id="rh-name"></h1>
+        <p class="rh-sub" id="rh-sub"></p>
+      </div>
+    </section>
+    <div id="rthumbs"></div>
+    <div id="rmain">
+      <div class="rdesc" id="rdesc"></div>
+      <div class="rbook" id="rbook"></div>
+    </div>
+    <section id="rother">
+      <div class="ro-hdr">
+        <h2 class="ro-title" id="ro-title"></h2>
+        <button class="ro-all" id="ro-all" onclick="goSection('rooms')"></button>
+      </div>
+      <div class="ro-grid" id="ro-grid"></div>
+    </section>
+    <div class="rfooter">
+      <p id="rfooter-txt"></p>
+    </div>
+  </div>
+</div><!-- end page-room -->
+
+<script>
+/* ══════════════════════════════════════════
+   TRANSLATIONS
+══════════════════════════════════════════ */
+var T = {
+en:{
+  nav:['About','Rooms','Dining','Experiences','Gallery','Contact'],
+  reserve:'Reserve Now',
+  hero_tag:'✦  YAOUNDÉ · CAMEROON · EST. 2024  ✦',
+  hero_title:'Where <em>Royalty</em> Rests',
+  hero_sub:'Experience the pinnacle of African luxury in the vibrant heart of Yaoundé — where heritage meets contemporary elegance.',
+  hero_cta1:'Book Your Stay',hero_cta2:'Discover the Hotel',hero_scroll:'Scroll',
+  b_pools:'Pools',b_conc:'Concierge',b_star:'5-Star',
+  about_lbl:'Our Story',about_h:'A Palace Built for the <em>Discerning</em> Traveler',
+  about_p1:"Empire Luxury Hotel rises proudly in Etoa-Meki — next to Boulangerie Sélecte, minutes from Yaoundé's city centre. Built with a vision to redefine African hospitality, the Empire is more than a hotel; it is a landmark for those who accept nothing less than extraordinary.",
+  about_p2:"Our suites feature private kitchenettes, balconies, smart TVs and refrigerators. The spa offers deep-tissue massages, aromatherapy wraps, sauna and hammam. Three pools — including a semi-Olympic — and 24h multilingual concierge await.",
+  st_pools:'Pools',st_svc:'Service',st_trans:'Transfers',st_spa:'Wellness',
+  about_rib:'5-Star Luxury',about_bdg:'Luxury Certified',
+  rooms_lbl:'Accommodations',rooms_h:'Your Private <em>Sanctuary</em> Awaits',
+  rooms_sub:'Each suite features a kitchenette, private balcony, smart TV & fridge — designed to exceed every expectation.',
+  room_from:'From',room_per:'/ night',room_cta:'View Suite →',
+  pools_lbl:'Aquatic Paradise',pools_h:'Three <em>Magnificent</em> Pools',
+  pools_body:"Dive into our three exceptional pools — including a semi-Olympic pool — open daily 6AM–10PM, fully accessible for families and wheelchair users.",
+  pools_cta:'Reserve Your Stay',
+  p1_t:'Semi-Olympic Pool',p1_d:'Heated · 25m · Lap lanes',
+  p2_t:'Leisure Pool',p2_d:'Tropical lagoon design',
+  p3_t:"Children's Pool",p3_d:'Safe · shallow · supervised',
+  p4_t:'Wheelchair Access',p4_d:'Fully inclusive facilities',
+  dining_lbl:'Gastronomy',dining_h:'A Symphony of <em>Flavors</em>',
+  dining_sub:'From authentic Cameroonian cuisine to international fine dining — our chefs craft unforgettable experiences.',
+  d1_tag:'Fine Dining · Pan-African',d1_desc:"Our signature restaurant offers a refined Pan-African culinary journey. Menus celebrate Cameroon's rich flavors elevated by contemporary French techniques.",d1_hrs:'🕐 12:00 PM – 11:00 PM · Reservations recommended',d1_cta:'Reserve a Table →',
+  d2_tag:'All-Day Café · Coffee & Snacks',d2_desc:'Freshly brewed specialty coffees, Cameroonian classics, artisan pastries and snacks served all day, alongside a premium snack bar.',d2_hrs:'🕐 6:00 AM – 11:00 PM · Walk-ins welcome',d2_cta:'View Menu →',
+  d3_tag:'Rooftop Bar · Cocktails & Tapas',d3_desc:"Yaoundé's most spectacular rooftop. Signature cocktails, wine list and gourmet tapas against the city's breathtaking skyline.",d3_hrs:'🕐 4:00 PM – 1:00 AM · Smart casual',d3_cta:'Reserve a Spot →',
+  am_lbl:'Hotel Experiences',am_h:'Beyond <em>Accommodation</em>',
+  am1_tag:'Wellness',am1_t:'Empire Spa & Wellness',am1_d:'Deep-tissue massages, aromatherapy body wraps, sauna and hammam. Inspired by African healing traditions.',
+  am2_tag:'Fitness',am2_t:'Fitness Center',am2_d:'State-of-the-art gym and personal trainers on request. Open 24 hours.',
+  am3_tag:'Business',am3_t:'Business & Conferences',am3_d:'Conference rooms for up to 200 guests. High-speed internet, AV and event coordinators.',
+  am4_tag:'Transfers',am4_t:'Airport Transfers',am4_d:'Direct to Nsimalen Airport, 12.5 miles away. Luxury vehicles for suite guests.',
+  am5_tag:'Dining',am5_t:'Room Service 24h',am5_d:'Round-the-clock in-room dining and premium snack bar with local and international products.',
+  am6_tag:'Concierge',am6_t:'Concierge & Free WiFi',am6_d:'Multilingual 24h concierge and complimentary high-speed WiFi throughout the property.',
+  pills:['🐾 Pets Welcome','👨‍👩‍👧 Family Friendly','🅿️ Free Parking','📺 Smart TV','🧊 Fridge & Microwave','🍺 Bar & Lounge','☀️ Terrace','🔒 Safe Box'],
+  gal_lbl:'Gallery',gallery_h:'A Glimpse of the <em>Empire</em>',gal_cta:'Book Your Experience',
+  g1:'Hotel Exterior',g2:'Luxury Suite',g3:"L'Empire Restaurant",g4:'Aquatic Paradise',g5:'Empire Spa',
+  testi_lbl:'Guest Voices',testi_h:'Words from Our <em>Guests</em>',
+  t1_txt:"The Empire redefined what luxury means to me. Even in Paris or Dubai I haven't experienced such attentiveness. Yaoundé now has a world-class destination.",t1_role:'Diplomatic Resident, Yaoundé',
+  t2_txt:'Every detail — from the welcome drink to the turn-down service — was impeccable. The staff remembered my name from the very first hour. I felt like royalty.',
+  t3_txt:"L'Empire Restaurant alone is worth the trip. The grilled tilapia with ndolé was extraordinary. I've dined at Michelin-starred places and this rivals them all.",
+  testi_rat:'Rated 5-Star Luxury · Yaoundé, Cameroon',
+  bk_lbl:'Reservations',booking_h:'Reserve Your <em>Stay</em>',
+  f_name:'Full Name',f_name_ph:'John Doe',f_phone:'Phone / WhatsApp',f_ci:'Check-in',f_co:'Check-out',
+  f_room:'Room Type',f_rooms:['Select a room…','Empire Classic Room — XAF 85,000/night','Royal Junior Suite — XAF 145,000/night','Presidential Suite — XAF 380,000/night','Deluxe Double Room — XAF 95,000/night','Empire Family Suite — XAF 195,000/night','Empire Penthouse — XAF 520,000/night'],
+  f_guests:'Guests',f_req:'Special Requests',f_req_ph:'Airport transfer, dietary requirements, occasion…',
+  f_submit:'Confirm Reservation',f_note:'Our team confirms your booking within 2 hours · reservations@empireluxuryhotel.cm',
+  contact_h:'Get in <em>Touch</em>',c_addr:'Address',c_addr_v:'Etoa-Meki, next to Boulangerie Sélecte<br>Yaoundé, Cameroon',c_ph:'Phone / WhatsApp',c_web:'Website',map_t:'View on Google Maps — Etoa-Meki, Yaoundé',
+  ntf_ok:'✓ Request Sent!',ntf_ok_b:"We'll confirm within 2 hours.",ntf_err:'⚠ Please fill all required fields.',
+  footer_desc:'Where royalty rests. A five-star landmark of African luxury in Etoa-Meki, Yaoundé, Cameroon.',
+  fn_h:'Navigation',fn_about:'About Us',fn_rooms:'Rooms & Suites',fn_dining:'Dining',fn_exp:'Experiences',fn_gal:'Gallery',fn_book:'Book Now',
+  fs_h:'Services',fs_spa:'Spa & Wellness',fs_pools:'3 Swimming Pools',fs_conf:'Conference Rooms',fs_apt:'Airport Transfer',fs_conc:'24h Concierge',fs_park:'Free Parking',
+  fc_h:'Contact',fc_addr:'Etoa-Meki, Yaoundé, Cameroon',
+  footer_copy:'© 2024 Empire Luxury Hotel. All rights reserved. | Etoa-Meki, Yaoundé, Cameroon',footer_star:'5-Star Luxury Hotel',
+  sending:'Sending…',mail_open:'✓ Mail client opened — send to confirm.',
+  ro_title:'Explore <em>Other Rooms</em>',ro_all:'View all rooms →',rfooter:'© 2024 Empire Luxury Hotel ·',rfooter_home:'Back to Home',
+  rb_from:'From',rb_per:'/ night',rb_btn:'Book This Room',rb_wa:'💬  Book via WhatsApp',rb_note:'Confirmation within 2 hours',
+  rb_name:'Full Name',rb_email:'Email',rb_ci:'Check-in',rb_co:'Check-out',rb_guests:'Guests',
+  incl_h:"What's Included",feats_h:'Room Features',pol_h:'Room Policy'
+},
+fr:{
+  nav:['À Propos','Chambres','Restauration','Expériences','Galerie','Contact'],
+  reserve:'Réserver',
+  hero_tag:'✦  YAOUNDÉ · CAMEROUN · DEPUIS 2024  ✦',
+  hero_title:'Où la <em>Royauté</em> Repose',
+  hero_sub:"Vivez le summum du luxe africain au cœur vibrant de Yaoundé — là où le patrimoine rencontre l'élégance contemporaine.",
+  hero_cta1:'Réserver votre Séjour',hero_cta2:"Découvrir l'Hôtel",hero_scroll:'Défiler',
+  b_pools:'Piscines',b_conc:'Conciergerie',b_star:'5 Étoiles',
+  about_lbl:'Notre Histoire',about_h:'Un Palais pour le Voyageur <em>Exigeant</em>',
+  about_p1:"L'Empire Luxury Hotel s'élève fièrement à Etoa-Meki — à côté de la Boulangerie Sélecte, à quelques minutes du centre-ville de Yaoundé. Conçu pour redéfinir l'hospitalité africaine, l'Empire est plus qu'un hôtel ; c'est un monument pour ceux qui n'acceptent rien de moins qu'extraordinaire.",
+  about_p2:"Nos suites disposent de kitchenettes privées, balcons, télévisions intelligentes et réfrigérateurs. Le spa propose massages, enveloppements, sauna et hammam. Trois piscines — dont une semi-olympique — et une conciergerie multilingue 24h/24 vous attendent.",
+  st_pools:'Piscines',st_svc:'Service',st_trans:'Transferts',st_spa:'Bien-être',
+  about_rib:'Luxe 5 Étoiles',about_bdg:'Luxe Certifié',
+  rooms_lbl:'Hébergements',rooms_h:'Votre <em>Sanctuaire</em> Privé Vous Attend',
+  rooms_sub:"Chaque suite dispose d'une kitchenette, balcon privé, TV connectée & frigo — conçue pour dépasser toutes vos attentes.",
+  room_from:'Dès',room_per:'/ nuit',room_cta:'Voir la Suite →',
+  pools_lbl:'Paradis Aquatique',pools_h:'Trois <em>Magnifiques</em> Piscines',
+  pools_body:"Plongez dans nos trois piscines exceptionnelles — dont une semi-olympique — ouvertes de 6h à 22h, entièrement accessibles aux familles et aux PMR.",
+  pools_cta:'Réserver votre Séjour',
+  p1_t:'Piscine Semi-Olympique',p1_d:'Chauffée · 25m · Couloirs',
+  p2_t:'Piscine de Loisirs',p2_d:'Style lagune tropicale',
+  p3_t:'Piscine Enfants',p3_d:'Sûre · peu profonde · surveillée',
+  p4_t:'Accès PMR',p4_d:'Infrastructures inclusives',
+  dining_lbl:'Gastronomie',dining_h:'Une Symphonie de <em>Saveurs</em>',
+  dining_sub:'De la cuisine camerounaise authentique à la gastronomie internationale — nos chefs créent des expériences inoubliables.',
+  d1_tag:'Gastronomie · Cuisine Panafricaine',d1_desc:'Notre restaurant signature offre un voyage culinaire panafricain raffiné. Menus soignés célébrant les saveurs camerounaises rehaussées par des techniques françaises.',d1_hrs:'🕐 12h00 – 23h00 · Réservation recommandée',d1_cta:'Réserver une Table →',
+  d2_tag:'Café · Cafés de Spécialité & Encas',d2_desc:"Cafés de spécialité, classiques camerounais, pâtisseries artisanales et collations toute la journée, avec épicerie fine.",d2_hrs:'🕐 6h00 – 23h00 · Sans réservation',d2_cta:'Voir le Menu →',
+  d3_tag:'Bar Panoramique · Cocktails & Tapas',d3_desc:"Le plus spectaculaire rooftop de Yaoundé. Cocktails signatures, carte des vins et tapas gastronomiques face au skyline époustouflant.",d3_hrs:'🕐 16h00 – 1h00 · Tenue décontractée chic',d3_cta:'Réserver une Place →',
+  am_lbl:'Expériences Hôtelières',am_h:"Au-delà de l'<em>Hébergement</em>",
+  am1_tag:'Bien-être',am1_t:'Spa & Bien-être Empire',am1_d:"Massages en profondeur, enveloppements aromatiques, sauna et hammam. Inspiré des traditions africaines.",
+  am2_tag:'Fitness',am2_t:'Centre de Fitness',am2_d:'Équipements de pointe et coachs personnels sur demande. Ouvert 24h/24.',
+  am3_tag:'Affaires',am3_t:'Affaires & Conférences',am3_d:"Salles pour 200 personnes. Internet haut débit, AV et coordinateurs d'événements.",
+  am4_tag:'Transferts',am4_t:'Transferts Aéroport',am4_d:'Liaison directe avec l\'aéroport de Nsimalen à 20 km. Véhicules de luxe sur demande.',
+  am5_tag:'Restauration',am5_t:'Room Service 24h',am5_d:'Restauration en chambre 24h/24 et épicerie fine avec produits locaux et internationaux.',
+  am6_tag:'Conciergerie',am6_t:'Conciergerie & WiFi Gratuit',am6_d:'Conciergerie multilingue 24h/24 et WiFi haut débit gratuit dans tout l\'établissement.',
+  pills:['🐾 Animaux Bienvenus','👨‍👩‍👧 Familles Bienvenues','🅿️ Parking Gratuit','📺 TV Connectée','🧊 Frigo & Micro-ondes','🍺 Bar & Salon','☀️ Terrasse','🔒 Coffre-fort'],
+  gal_lbl:'Galerie',gallery_h:"Un Aperçu de l'<em>Empire</em>",gal_cta:'Réserver votre Expérience',
+  g1:"Façade de l'Hôtel",g2:'Suite de Luxe',g3:"Restaurant L'Empire",g4:'Paradis Aquatique',g5:'Spa Empire',
+  testi_lbl:'Avis Clients',testi_h:'Les Mots de Nos <em>Hôtes</em>',
+  t1_txt:"L'Empire a redéfini ce que le luxe signifie pour moi. Même à Paris ou Dubai, je n'ai pas vécu une telle attention. Yaoundé a désormais une destination de classe mondiale.",t1_role:'Résident Diplomatique, Yaoundé',
+  t2_txt:'Chaque détail — du verre de bienvenue au service de couverture — était irréprochable. Le personnel se souvenait de mon prénom dès la première heure. Je me suis sentie comme une reine.',
+  t3_txt:"Le restaurant L'Empire vaut à lui seul le voyage. Le tilapia grillé au ndolé était extraordinaire. J'ai dîné dans des étoilés Michelin et celui-ci les rivalise tous.",
+  testi_rat:'Noté Luxe 5 Étoiles · Yaoundé, Cameroun',
+  bk_lbl:'Réservations',booking_h:'Réserver votre <em>Séjour</em>',
+  f_name:'Nom Complet',f_name_ph:'Jean Dupont',f_phone:'Téléphone / WhatsApp',f_ci:'Date d\'Arrivée',f_co:'Date de Départ',
+  f_room:'Type de Chambre',f_rooms:['Choisir une chambre…','Chambre Classique Empire — XAF 85 000/nuit','Suite Junior Royale — XAF 145 000/nuit','Suite Présidentielle — XAF 380 000/nuit','Chambre Deluxe Double — XAF 95 000/nuit','Suite Familiale Empire — XAF 195 000/nuit','Empire Penthouse — XAF 520 000/nuit'],
+  f_guests:'Personnes',f_req:'Demandes Spéciales',f_req_ph:'Transfert, régime alimentaire, célébration…',
+  f_submit:'Confirmer la Réservation',f_note:'Notre équipe confirme sous 2 heures · reservations@empireluxuryhotel.cm',
+  contact_h:'Nous <em>Contacter</em>',c_addr:'Adresse',c_addr_v:'Etoa-Meki, à côté de la Boulangerie Sélecte<br>Yaoundé, Cameroun',c_ph:'Téléphone / WhatsApp',c_web:'Site Web',map_t:'Voir sur Google Maps — Etoa-Meki, Yaoundé',
+  ntf_ok:'✓ Demande Envoyée !',ntf_ok_b:'Notre équipe confirmera sous 2 heures.',ntf_err:'⚠ Veuillez remplir tous les champs requis.',
+  footer_desc:"Là où la royauté repose. Un monument cinq étoiles du luxe africain à Etoa-Meki, Yaoundé, Cameroun.",
+  fn_h:'Navigation',fn_about:'À Propos',fn_rooms:'Chambres & Suites',fn_dining:'Restauration',fn_exp:'Expériences',fn_gal:'Galerie',fn_book:'Réserver',
+  fs_h:'Services',fs_spa:'Spa & Bien-être',fs_pools:'3 Piscines',fs_conf:'Salles Conférence',fs_apt:'Transfert Aéroport',fs_conc:'Conciergerie 24h',fs_park:'Parking Gratuit',
+  fc_h:'Contact',fc_addr:'Etoa-Meki, Yaoundé, Cameroun',
+  footer_copy:'© 2024 Empire Luxury Hotel. Tous droits réservés. | Etoa-Meki, Yaoundé, Cameroun',footer_star:'Hôtel Luxe 5 Étoiles',
+  sending:'Envoi…',mail_open:'✓ Client mail ouvert — envoyez pour confirmer.',
+  ro_title:"Explorer <em>d'Autres Chambres</em>",ro_all:'Voir toutes les chambres →',rfooter:'© 2024 Empire Luxury Hotel ·',rfooter_home:'Retour à l\'Accueil',
+  rb_from:'Dès',rb_per:'/ nuit',rb_btn:'Réserver cette Chambre',rb_wa:'💬  Réserver via WhatsApp',rb_note:'Confirmation sous 2 heures',
+  rb_name:'Nom Complet',rb_email:'Email',rb_ci:'Arrivée',rb_co:'Départ',rb_guests:'Personnes',
+  incl_h:'Ce qui est Inclus',feats_h:'Équipements',pol_h:'Politique'
+}
+};
+
+/* ══════════════════════════════════════════
+   ROOMS DATA
+══════════════════════════════════════════ */
+var ROOMS = [
+  {
+    id:'classic',
+    img:'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=90',
+    thumb:'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&q=80',
+    imgs:['https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=90','https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=85','https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=85','https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=85'],
+    price:'XAF 85,000',price_fr:'XAF 85 000',
+    feats:['King Bed','WiFi','AC','City View','Balcony','Kitchenette','Smart TV','Rain Shower','Minibar','Safe','Room Service','Housekeeping'],
+    en:{tag:'Classic',tier:'Standard · King Bed',name:'Empire Classic Room',desc:'Elegantly appointed with king-size bedding, kitchenette, private balcony and city views. A refined retreat for the discerning traveler.',hero_sub:'King-size luxury with private balcony & city views',p1:"The Empire Classic Room is your gateway to five-star living. A king-size bed dressed in premium Egyptian cotton, floor-to-ceiling windows and a private balcony overlooking the vibrant city of Yaoundé.",p2:"Every detail curated for comfort: kitchenette stocked with premium essentials, rain shower in marble bathroom, Smart TV, high-speed WiFi, in-room safe and complimentary minibar.",incl:['Complimentary breakfast for 2','Free high-speed WiFi','Welcome drink on arrival','Daily turndown service','Access to all 3 pools','Fitness center access'],pol:['Check-in 2:00 PM · Check-out 12:00 PM','Non-smoking room','Pets welcome on request','Extra bed available on request'],gal_labels:['Bedroom','Balcony','Bathroom','City View']},
+    fr:{tag:'Classique',tier:'Standard · Lit King',name:'Chambre Classique Empire',desc:'Élégamment aménagée avec grand lit, kitchenette, balcon privé et vue sur la ville. Un refuge raffiné pour le voyageur exigeant.',hero_sub:'Luxe king-size avec balcon privé & vue sur la ville',p1:"La Chambre Classique Empire est votre porte d'entrée vers le séjour cinq étoiles. Un grand lit habillé de coton égyptien premium, des fenêtres du sol au plafond et un balcon privé avec vue sur Yaoundé.",p2:"Chaque détail pensé pour votre confort : kitchenette garnie d'essentiels premium, douche à pluie en marbre, Smart TV, WiFi haut débit, coffre-fort et minibar offert.",incl:['Petit-déjeuner offert pour 2','WiFi haut débit gratuit','Boisson de bienvenue','Service de couverture quotidien','Accès aux 3 piscines','Accès au centre de fitness'],pol:['Arrivée 14h00 · Départ 12h00','Chambre non-fumeur','Animaux bienvenus sur demande','Lit supplémentaire sur demande'],gal_labels:['Chambre','Balcon','Salle de Bain','Vue sur la Ville']}
+  },
+  {
+    id:'junior',
+    img:'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&q=90',
+    thumb:'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&q=80',
+    imgs:['https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&q=90','https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=85','https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=85','https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=85'],
+    price:'XAF 145,000',price_fr:'XAF 145 000',
+    feats:['King Bed','Living Room','Balcony','Kitchenette','Soaking Tub','Rain Shower','Espresso Machine','Smart TV × 2','WiFi','Safe','Minibar','Butler on Request'],
+    en:{tag:'Junior Suite',tier:'Junior Suite · Premium',name:'Royal Junior Suite',desc:'Expansive living area, private balcony and premium amenities. The suite that sets the luxury standard in Yaoundé.',hero_sub:'Expansive living, private balcony & premium finishes',p1:"The Royal Junior Suite elevates your stay with a distinct separation between sleeping and living areas. A plush king-size bed faces floor-to-ceiling windows, while the separate lounge invites you to unwind after a day in Yaoundé.",p2:"The fully equipped kitchenette, premium minibar, espresso machine and Nespresso pods cater to every mood. The marble bathroom features a deep soaking tub and rain shower, with Molton Brown toiletries.",incl:['Complimentary breakfast for 2','Evening canapés on arrival','Free high-speed WiFi','Priority pool & spa access','Daily turndown service','Airport transfer (one way)'],pol:['Check-in 2:00 PM · Check-out 12:00 PM','Non-smoking suite','Pets welcome on request','Late check-out on request'],gal_labels:['Living Area','Bedroom','Bathroom','Balcony']},
+    fr:{tag:'Suite Junior',tier:'Suite Junior · Premium',name:'Suite Junior Royale',desc:'Grand salon, balcon privé et équipements premium. La suite qui définit le standard du luxe à Yaoundé.',hero_sub:'Grand salon, balcon privé & finitions haut de gamme',p1:"La Suite Junior Royale élève votre séjour avec une séparation nette entre l'espace nuit et le salon. Un grand lit moelleux face aux fenêtres panoramiques, salon séparé et balcon privé.",p2:"La kitchenette entièrement équipée, le minibar premium, la machine à expresso. La salle de bain en marbre dispose d'une baignoire et d'une douche à pluie, avec des produits Molton Brown.",incl:['Petit-déjeuner offert pour 2','Canapés offerts à l\'arrivée','WiFi haut débit gratuit','Accès prioritaire piscine & spa','Service de couverture quotidien','Transfert aéroport aller simple'],pol:['Arrivée 14h00 · Départ 12h00','Suite non-fumeur','Animaux bienvenus sur demande','Départ tardif sur demande'],gal_labels:['Salon','Chambre','Salle de Bain','Balcon']}
+  },
+  {
+    id:'presidential',
+    img:'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=90',
+    thumb:'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80',
+    imgs:['https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=90','https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=85','https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=85','https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=85'],
+    price:'XAF 380,000',price_fr:'XAF 380 000',
+    feats:['Master Bedroom','Private Kitchen','Formal Dining','Grand Lounge','Butler 24h','Double Rain Shower','Clawfoot Bath','Heated Marble Floor','Smart TV × 3','WiFi','Premium Minibar','Panoramic Views'],
+    en:{tag:'Presidential',tier:'Presidential · Ultimate Luxury',name:'Presidential Suite',desc:'Multi-room layout with private kitchen, butler service and panoramic views of Yaoundé. Reserved for those who command the very best.',hero_sub:'The ultimate statement — multi-room, butler & panoramic views',p1:"Reserved for those who command the very best, the Presidential Suite is a private residence in the sky. A vast master bedroom, formal dining area for six, fully equipped private kitchen and grand lounge with panoramic floor-to-ceiling windows.",p2:"Your personal butler is on call 24 hours. The master bathroom features heated marble floor, twin vanities, double rain shower and a freestanding clawfoot bath. This is not a room — it is a statement.",incl:['Full breakfast, lunch & dinner','Private butler service 24h','Complimentary airport transfers (both ways)','Dedicated concierge','In-suite spa treatment on arrival','Priority access to all facilities'],pol:['Check-in 12:00 PM · Check-out 2:00 PM (extended)','Non-smoking suite','Pets welcome','Full butler & privacy service'],gal_labels:['Grand Lounge','Master Bedroom','Dining Area','Panoramic View']},
+    fr:{tag:'Présidentielle',tier:'Présidentielle · Luxe Absolu',name:'Suite Présidentielle',desc:'Disposition multi-pièces avec cuisine privée, majordome et vue panoramique sur Yaoundé. Réservée à ceux qui exigent le meilleur.',hero_sub:"L'ultime expression du luxe — multi-pièces, majordome & vues panoramiques",p1:"Réservée à ceux qui exigent le meilleur, la Suite Présidentielle est une résidence privée. Un vaste appartement avec chambre principale king-size, salle à manger formelle pour six, cuisine privée et grand salon avec vues panoramiques.",p2:"Votre majordome personnel disponible 24h/24. La salle de bain dispose d'un sol en marbre chauffant, de doubles vasques, d'une douche à pluie double et d'une baignoire autoportante.",incl:['Petit-déjeuner, déjeuner & dîner inclus','Service de majordome 24h','Transferts aéroport offerts aller-retour','Conciergerie dédiée','Soin spa en suite à l\'arrivée','Accès prioritaire à tous les équipements'],pol:['Arrivée 12h00 · Départ 14h00 (prolongé)','Suite non-fumeur','Animaux bienvenus','Service majordome & confidentialité totale'],gal_labels:['Grand Salon','Chambre Principale','Salle à Manger','Vue Panoramique']}
+  },
+  {
+    id:'deluxe',
+    img:'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200&q=90',
+    thumb:'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=400&q=80',
+    imgs:['https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200&q=90','https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=85','https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=85','https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=85'],
+    price:'XAF 95,000',price_fr:'XAF 95 000',
+    feats:['Twin or King Bed','Garden View','Kitchenette','Rain Shower','Smart TV','WiFi','AC','Safe','Minibar','Housekeeping','Toiletries','Room Service 24h'],
+    en:{tag:'Deluxe',tier:'Deluxe Double · Garden View',name:'Deluxe Double Room',desc:'A sophisticated double room with twin or king-size bed, garden views, rain shower, kitchenette and complimentary minibar.',hero_sub:'Flexible twin or king configuration with serene garden views',p1:"The Deluxe Double Room is ideal for colleagues, friends or couples who appreciate flexibility. Available in twin or king-size configuration, the room looks out onto our tropical gardens.",p2:"The rain shower, premium bedding, kitchenette, complimentary minibar and Smart TV make every moment a pleasure. Positioned on mid-range floors for balanced views and tranquility.",incl:['Complimentary breakfast for 2','Free high-speed WiFi','Welcome drink on arrival','Access to all 3 pools','Fitness center access','Daily housekeeping'],pol:['Check-in 2:00 PM · Check-out 12:00 PM','Non-smoking room','Pets welcome on request','Bed configuration selectable at booking'],gal_labels:['Bedroom','Garden View','Bathroom','Amenities']},
+    fr:{tag:'Deluxe',tier:'Deluxe Double · Vue Jardin',name:'Chambre Deluxe Double',desc:'Une chambre double sophistiquée avec lit jumeau ou king, vue jardin, douche à pluie, kitchenette et minibar offert.',hero_sub:'Configuration twin ou king avec vue jardin apaisante',p1:"La Chambre Deluxe Double est idéale pour les collègues, amis ou couples. Disponible en configuration lits jumeaux ou king-size, elle donne sur nos jardins tropicaux.",p2:"La douche à pluie, la literie premium, la kitchenette, le minibar offert et la Smart TV rendent chaque instant un plaisir. Positionnée aux étages intermédiaires pour une quiétude assurée.",incl:['Petit-déjeuner offert pour 2','WiFi haut débit gratuit','Boisson de bienvenue','Accès aux 3 piscines','Accès au centre de fitness','Ménage quotidien'],pol:['Arrivée 14h00 · Départ 12h00','Chambre non-fumeur','Animaux bienvenus sur demande','Configuration du lit sélectionnable à la réservation'],gal_labels:['Chambre','Vue Jardin','Salle de Bain','Équipements']}
+  },
+  {
+    id:'family',
+    img:'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=1200&q=90',
+    thumb:'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&q=80',
+    imgs:['https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=1200&q=90','https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=85','https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=85','https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&q=85'],
+    price:'XAF 195,000',price_fr:'XAF 195 000',
+    feats:['Master King Bedroom','Twin Bedroom','2 Bathrooms','Full Kitchen','Pool-View Balcony','Smart TV × 2','WiFi','Children Kit','AC','Safe','Minibar','Housekeeping'],
+    en:{tag:'Family Suite',tier:'Family Suite · 2 Bedrooms',name:'Empire Family Suite',desc:'Two-bedroom suite with full kitchen, two bathrooms and private pool-view balcony. Crafted for families.',hero_sub:'Two bedrooms, full kitchen & pool view — crafted for families',p1:"The Empire Family Suite was born from a simple belief: families deserve luxury too. Two beautifully appointed bedrooms share a generous open-plan living area, a fully equipped kitchen and two separate bathrooms.",p2:"The private balcony overlooks the hotel's magnificent pool. A children's welcome amenity kit, champagne for the parents, Netflix on Smart TVs and a rollaway bed option make this the most thoughtful family stay in Yaoundé.",incl:['Complimentary breakfast for 4','Welcome champagne & children\'s kit','Free high-speed WiFi','Access to all 3 pools incl. children\'s pool','Daily housekeeping','Extra rollaway bed available'],pol:['Check-in 2:00 PM · Check-out 12:00 PM','Non-smoking suite','Children of all ages welcome','Pets welcome on request','Cot available for infants (free)'],gal_labels:['Living Area','Master Bedroom','Twin Room','Pool View']},
+    fr:{tag:'Suite Familiale',tier:'Suite Familiale · 2 Chambres',name:'Suite Familiale Empire',desc:'Suite deux chambres avec cuisine équipée, deux salles de bain et balcon privé vue piscine. Conçue pour les familles.',hero_sub:'Deux chambres, cuisine complète & vue piscine — pour les familles',p1:"La Suite Familiale Empire est née d'une conviction : les familles méritent aussi le luxe. Deux belles chambres partagent un généreux séjour ouvert, une cuisine entièrement équipée et deux salles de bain séparées.",p2:"Le balcon privé donne sur la magnifique piscine de l'hôtel. Un kit d'accueil enfants, une bouteille de champagne pour les parents, Netflix sur les Smart TV et la possibilité d'un lit d'appoint.",incl:['Petit-déjeuner offert pour 4','Champagne & kit enfants offerts','WiFi haut débit gratuit','Accès aux 3 piscines dont celle pour enfants','Ménage quotidien','Lit d\'appoint disponible'],pol:['Arrivée 14h00 · Départ 12h00','Suite non-fumeur','Enfants de tout âge bienvenus','Animaux bienvenus sur demande','Lit bébé disponible gratuitement'],gal_labels:['Salon','Chambre Principale','Chambre Jumelle','Vue Piscine']}
+  },
+  {
+    id:'penthouse',
+    img:'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1200&q=90',
+    thumb:'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=400&q=80',
+    imgs:['https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1200&q=90','https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=85','https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=800&q=85','https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=85'],
+    price:'XAF 520,000',price_fr:'XAF 520 000',
+    feats:['Private Rooftop Terrace','Outdoor Jacuzzi','360° Views','Master Bedroom','Chef\'s Kitchen','Private Study','Butler 24h','Private Bar','Smart TV × 4','WiFi','Wine Cellar','Private Entrance'],
+    en:{tag:'Penthouse',tier:'Penthouse · Exclusive',name:'Empire Penthouse',desc:'Private rooftop terrace, outdoor Jacuzzi, 360° panoramic views & butler on call. The crown jewel of the Empire.',hero_sub:'The crown jewel — rooftop terrace, Jacuzzi & 360° Yaoundé views',p1:"The Empire Penthouse occupies the entire top floor — a private sanctuary above Yaoundé. Step through your private entrance into a world of unmatched luxury: sprawling master bedroom, chef's kitchen, a study and a grand living room.",p2:"The crown jewel is the private rooftop terrace — outdoor Jacuzzi, sun deck with lounge chairs, private bar and 360° unobstructed views of Yaoundé from dawn to dusk. Your butler anticipates every need. Your privacy is absolute.",incl:['All meals included (full board)','Dedicated butler & personal chef','Private chauffeured vehicle','Unlimited spa & wellness access','Airport transfers in luxury car','Exclusive rooftop terrace access'],pol:['Flexible check-in/check-out by arrangement','Non-smoking (terrace smoking area available)','Pets welcome','Absolute privacy guaranteed','Minimum 2-night stay'],gal_labels:['Rooftop Terrace','Master Bedroom','Jacuzzi','360° View']},
+    fr:{tag:'Penthouse',tier:'Penthouse · Exclusif',name:'Empire Penthouse',desc:'Terrasse rooftop privée, Jacuzzi extérieur, vues panoramiques 360° & majordome à disposition. Le joyau de couronne de l\'Empire.',hero_sub:'Le joyau de couronne — terrasse rooftop, Jacuzzi & vues 360° sur Yaoundé',p1:"L'Empire Penthouse occupe tout le dernier étage — un sanctuaire privé au-dessus de Yaoundé. Franchissez votre entrée privée pour découvrir un monde de luxe inégalé : chambre principale, cuisine de chef, bureau et grand salon.",p2:"Le joyau de couronne est la terrasse rooftop privée — Jacuzzi extérieur, solarium, bar privé et vues 360° dégagées sur Yaoundé. Votre majordome anticipe chaque besoin. Votre intimité est absolue.",incl:['Tous les repas inclus (pension complète)','Majordome dédié & chef personnel','Véhicule avec chauffeur privé','Accès illimité spa & bien-être','Transferts aéroport en voiture de luxe','Accès exclusif à la terrasse rooftop'],pol:['Arrivée/départ flexible selon arrangement','Non-fumeur (espace fumeur sur terrasse)','Animaux bienvenus','Intimité absolue garantie','Séjour minimum 2 nuits'],gal_labels:['Terrasse Rooftop','Chambre Principale','Jacuzzi','Vue 360°']}
+  }
+];
+
+/* ══════════════════════════════════════════
+   STATE
+══════════════════════════════════════════ */
+var lang   = 'en';
+var curRoom = null;
+
+/* ══════════════════════════════════════════
+   HELPERS
+══════════════════════════════════════════ */
+function si(id,v){var e=document.getElementById(id);if(e)e.innerHTML=v;}
+function st(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}
+
+/* ══════════════════════════════════════════
+   NAVIGATION
+══════════════════════════════════════════ */
+function showPage(id){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
+  var p=document.getElementById(id);
+  if(p)p.classList.add('active');
+  window.scrollTo(0,0);
+  var nb=document.getElementById('nb');
+  if(nb){nb.classList.remove('sc');nb.classList.toggle('room-nb',id==='page-room');}
+}
+
+function goHome(){
+  curRoom=null;
+  showPage('page-home');
+  renderNav();
+}
+
+function goSection(sec){
+  curRoom=null;
+  showPage('page-home');
+  renderNav();
+  setTimeout(function(){
+    var el=document.getElementById(sec);
+    if(el)el.scrollIntoView({behavior:'smooth'});
+  },80);
+}
+
+function openRoom(id){
+  curRoom=id;
+  showPage('page-room');
+  renderRoomPage(id);
+  renderNav();
+}
+
+/* ══════════════════════════════════════════
+   LANGUAGE
+══════════════════════════════════════════ */
+function setLang(l){
+  lang=l;
+  try{localStorage.setItem('empire-lang',l);}catch(e){}
+  document.documentElement.lang=l;
+  document.getElementById('btn-en').classList.toggle('on',l==='en');
+  document.getElementById('btn-fr').classList.toggle('on',l==='fr');
+  applyLang();
+  if(curRoom)renderRoomPage(curRoom);
+}
+
+function applyLang(){
+  var t=T[lang];
+  renderNav();
+  /* hero */
+  st('hero-tag',t.hero_tag);si('hero-title',t.hero_title);st('hero-sub',t.hero_sub);
+  st('hero-cta1',t.hero_cta1);st('hero-cta2',t.hero_cta2);st('hero-scroll',t.hero_scroll);
+  st('b-pools',t.b_pools);st('b-conc',t.b_conc);st('b-star',t.b_star);
+  /* about */
+  st('about-lbl',t.about_lbl);si('about-h',t.about_h);
+  st('about-p1',t.about_p1);st('about-p2',t.about_p2);
+  st('st-pools',t.st_pools);st('st-svc',t.st_svc);st('st-trans',t.st_trans);st('st-spa',t.st_spa);
+  st('about-rib',t.about_rib);st('about-bdg',t.about_bdg);
+  /* rooms */
+  st('rooms-lbl',t.rooms_lbl);si('rooms-h',t.rooms_h);st('rooms-sub',t.rooms_sub);
+  renderRoomsGrid();
+  /* pools */
+  st('pools-lbl',t.pools_lbl);si('pools-h',t.pools_h);st('pools-body',t.pools_body);st('pools-cta',t.pools_cta);
+  st('p1-t',t.p1_t);st('p1-d',t.p1_d);st('p2-t',t.p2_t);st('p2-d',t.p2_d);
+  st('p3-t',t.p3_t);st('p3-d',t.p3_d);st('p4-t',t.p4_t);st('p4-d',t.p4_d);
+  /* dining */
+  st('dining-lbl',t.dining_lbl);si('dining-h',t.dining_h);st('dining-sub',t.dining_sub);
+  st('d1-tag',t.d1_tag);st('d1-desc',t.d1_desc);st('d1-hrs',t.d1_hrs);st('d1-cta',t.d1_cta);
+  st('d2-tag',t.d2_tag);st('d2-desc',t.d2_desc);st('d2-hrs',t.d2_hrs);st('d2-cta',t.d2_cta);
+  st('d3-tag',t.d3_tag);st('d3-desc',t.d3_desc);st('d3-hrs',t.d3_hrs);st('d3-cta',t.d3_cta);
+  /* amenities */
+  st('am-lbl',t.am_lbl);si('am-h',t.am_h);
+  for(var i=1;i<=6;i++){st('am'+i+'-tag',t['am'+i+'_tag']);st('am'+i+'-t',t['am'+i+'_t']);st('am'+i+'-d',t['am'+i+'_d']);}
+  var pills=document.getElementById('am-pills');
+  if(pills)pills.innerHTML=t.pills.map(function(p){return '<span class="apl">'+p+'</span>';}).join('');
+  /* gallery */
+  st('gal-lbl',t.gal_lbl);si('gallery-h',t.gallery_h);st('gal-cta',t.gal_cta);
+  for(var g=1;g<=5;g++)st('g'+g+'-l',t['g'+g]);
+  /* testi */
+  st('testi-lbl',t.testi_lbl);si('testi-h',t.testi_h);
+  st('t1-txt',t.t1_txt);st('t1-role',t.t1_role);st('t2-txt',t.t2_txt);st('t3-txt',t.t3_txt);
+  st('testi-rat',t.testi_rat);
+  /* booking */
+  st('bk-lbl',t.bk_lbl);si('booking-h',t.booking_h);
+  st('f-name-l',t.f_name);var fi=document.getElementById('f-name');if(fi)fi.placeholder=t.f_name_ph;
+  st('f-phone-l',t.f_phone);st('f-ci-l',t.f_ci);st('f-co-l',t.f_co);
+  st('f-room-l',t.f_room);
+  var froom=document.getElementById('f-room');
+  if(froom){froom.innerHTML=t.f_rooms.map(function(r,i){return'<option value="'+(i===0?'':r)+'">'+r+'</option>';}).join('');}
+  st('f-guests-l',t.f_guests);
+  st('f-req-l',t.f_req);var fr=document.getElementById('f-req');if(fr)fr.placeholder=t.f_req_ph;
+  st('f-submit',t.f_submit);st('f-note',t.f_note);
+  /* contact */
+  si('contact-h',t.contact_h);st('c-addr-l',t.c_addr);si('c-addr-v',t.c_addr_v);
+  st('c-ph-l',t.c_ph);st('c-web-l',t.c_web);st('map-t',t.map_t);
+  /* footer */
+  st('footer-desc',t.footer_desc);
+  st('fn-h',t.fn_h);st('fn-about',t.fn_about);st('fn-rooms',t.fn_rooms);st('fn-dining',t.fn_dining);st('fn-exp',t.fn_exp);st('fn-gal',t.fn_gal);st('fn-book',t.fn_book);
+  st('fs-h',t.fs_h);st('fs-spa',t.fs_spa);st('fs-pools',t.fs_pools);st('fs-conf',t.fs_conf);st('fs-apt',t.fs_apt);st('fs-conc',t.fs_conc);st('fs-park',t.fs_park);
+  st('fc-h',t.fc_h);st('fc-addr',t.fc_addr);
+  st('footer-copy',t.footer_copy);st('footer-star',t.footer_star);
+}
+
+/* ══════════════════════════════════════════
+   NAVBAR
+══════════════════════════════════════════ */
+function renderNav(){
+  var t=T[lang];
+  st('nav-reserve',t.reserve);
+  /* desktop nav */
+  var navSections=['about','rooms','dining','amenities','gallery','booking'];
+  var navEl=document.getElementById('main-nav');
+  if(navEl){
+    navEl.innerHTML=t.nav.map(function(label,i){
+      var sec=navSections[i];
+      return'<button onclick="goSection(\''+sec+'\')">'+(curRoom&&i===1?'<span style="color:var(--gold)">'+label+'</span>':label)+'</button>';
+    }).join('');
+  }
+  /* mobile nav */
+  var mm=document.getElementById('mm');
+  if(mm){
+    mm.innerHTML=t.nav.map(function(label,i){
+      return'<button onclick="goSection(\''+navSections[i]+'\');closeMenu()">'+label+'</button>';
+    }).join('')+
+    '<button class="mr" onclick="goSection(\'booking\');closeMenu()">'+t.reserve+'</button>'+
+    '<div style="display:flex;gap:.6rem;margin-top:1.4rem">'+
+      '<button class="lb '+(lang==='en'?'on':'')+'" onclick="setLang(\'en\')">EN</button>'+
+      '<button class="lb '+(lang==='fr'?'on':'')+'" onclick="setLang(\'fr\')">FR</button>'+
+    '</div>';
+  }
+}
+
+/* ══════════════════════════════════════════
+   ROOMS GRID (homepage)
+══════════════════════════════════════════ */
+function renderRoomsGrid(){
+  var t=T[lang];
+  var grid=document.getElementById('rooms-grid');
+  if(!grid)return;
+  grid.innerHTML=ROOMS.map(function(r,idx){
+    var rd=r[lang];
+    var delay=['','d1','d2','','d1','d2'][idx];
+    var featsHtml=r.feats.slice(0,4).map(function(f){return'<span class="rf">'+f+'</span>';}).join('');
+    return'<button class="rc rv '+delay+'" onclick="openRoom(\''+r.id+'\')">'+
+      '<div class="rcw">'+
+        '<div class="rtb"></div>'+
+        '<img class="rci" src="'+r.thumb+'" alt="'+rd.name+'" loading="lazy">'+
+        '<div class="rtag">'+rd.tag+'</div>'+
+      '</div>'+
+      '<div class="rb">'+
+        '<p class="rti">'+rd.tier+'</p>'+
+        '<h3 class="rn2">'+rd.name+'</h3>'+
+        '<p class="rd3">'+rd.desc+'</p>'+
+        '<div class="rfs">'+featsHtml+'</div>'+
+        '<div class="rft">'+
+          '<div class="rprice"><div class="from">'+t.room_from+'</div><span class="amt">'+(lang==='en'?r.price:r.price_fr)+'</span> <span class="per">'+t.room_per+'</span></div>'+
+          '<span class="rct">'+t.room_cta+'</span>'+
+        '</div>'+
+      '</div>'+
+    '</button>';
+  }).join('');
+  /* re-observe new elements */
+  document.querySelectorAll('.rv:not(.in)').forEach(function(el){observer.observe(el);});
+}
+
+/* ══════════════════════════════════════════
+   ROOM DETAIL PAGE
+══════════════════════════════════════════ */
+function renderRoomPage(id){
+  var room=ROOMS.find(function(r){return r.id===id;});
+  if(!room)return;
+  var t=T[lang];
+  var rd=room[lang];
+  /* hero */
+  var bg=document.getElementById('rh-bg');
+  if(bg)bg.style.backgroundImage="url('"+room.img+"')";
+  st('rh-tag',rd.tag);si('rh-name','<em>'+rd.name+'</em>');st('rh-sub',rd.hero_sub);
+  /* thumbnails */
+  var thumbs=document.getElementById('rthumbs');
+  if(thumbs){
+    thumbs.innerHTML=room.imgs.map(function(src,i){
+      var small=src.replace('w=1200','w=350').replace('w=800','w=350');
+      return'<img class="rthumb'+(i===0?' active':'')+'" src="'+small+'" alt="'+rd.gal_labels[i]+'" onclick="switchHeroImg(this,\''+src+'\')" loading="lazy">';
+    }).join('');
+  }
+  /* description */
+  var desc=document.getElementById('rdesc');
+  if(desc){
+    var featsHtml=room.feats.map(function(f){return'<div class="rfeat">'+f+'</div>';}).join('');
+    var inclHtml=rd.incl.map(function(i){return'<li>'+i+'</li>';}).join('');
+    var polHtml=rd.pol.map(function(p){return'<li>'+p+'</li>';}).join('');
+    var galHtml=room.imgs.slice(1).map(function(src,i){
+      return'<div class="rgal-item" onclick="openLB(\''+src+'\')"><img src="'+src+'" alt="'+rd.gal_labels[i+1]+'" loading="lazy"></div>';
+    }).join('');
+    desc.innerHTML=
+      '<h2><em>'+rd.name+'</em></h2>'+
+      '<p>'+rd.p1+'</p>'+
+      '<p>'+rd.p2+'</p>'+
+      '<div class="sdiv"><div class="rdd"></div></div>'+
+      '<div class="rftitle">'+t.feats_h+'</div>'+
+      '<div class="rfeats">'+featsHtml+'</div>'+
+      '<div class="sdiv"><div class="rdd"></div></div>'+
+      '<div class="rftitle">'+t.incl_h+'</div>'+
+      '<ul class="rincl-list">'+inclHtml+'</ul>'+
+      '<div class="rpol"><div class="rftitle">'+t.pol_h+'</div><ul class="rpol-list">'+polHtml+'</ul></div>'+
+      '<div class="sdiv"><div class="rdd"></div></div>'+
+      '<div class="rgal">'+galHtml+'</div>';
+  }
+  /* booking sidebar */
+  var rbook=document.getElementById('rbook');
+  if(rbook){
+    rbook.innerHTML=
+      '<div class="rbc">'+
+        '<div class="rbc-hdr"><div class="tag">'+rd.tag+'</div><div class="rname">'+rd.name+'</div></div>'+
+        '<div class="rbc-price"><div class="from">'+t.rb_from+'</div><div class="amount">'+(lang==='en'?room.price:room.price_fr)+'</div><div class="per">'+t.rb_per+'</div></div>'+
+        '<div class="rbc-form">'+
+          '<form onsubmit="submitRoom(event,\''+rd.name+'\')" novalidate>'+
+            '<div class="rfg"><label class="rfl">'+t.rb_name+'</label><input class="rfi" type="text" required placeholder="John Doe"></div>'+
+            '<div class="rfg"><label class="rfl">'+t.rb_email+'</label><input class="rfi" type="email" required placeholder="email@domain.com"></div>'+
+            '<div class="rfrow">'+
+              '<div class="rfg"><label class="rfl">'+t.rb_ci+'</label><input class="rfi" type="date" required></div>'+
+              '<div class="rfg"><label class="rfl">'+t.rb_co+'</label><input class="rfi" type="date" required></div>'+
+            '</div>'+
+            '<div class="rfg"><label class="rfl">'+t.rb_guests+'</label><input class="rfi" type="number" min="1" max="10" placeholder="2"></div>'+
+            '<button type="submit" class="rbk-btn" id="rbk-btn">'+t.rb_btn+'</button>'+
+          '</form>'+
+        '</div>'+
+        '<div class="rbc-wa" onclick="window.open(\'https://wa.me/237698800140\',\'_blank\')">'+t.rb_wa+'</div>'+
+        '<div class="rbc-note">'+t.rb_note+'</div>'+
+      '</div>';
+  }
+  /* other rooms */
+  var others=ROOMS.filter(function(r){return r.id!==id;}).slice(0,3);
+  si('ro-title',t.ro_title);st('ro-all',t.ro_all);
+  var rogrid=document.getElementById('ro-grid');
+  if(rogrid){
+    rogrid.innerHTML=others.map(function(r){
+      var ord=r[lang];
+      return'<button class="ro-card" onclick="openRoom(\''+r.id+'\')">'+
+        '<div class="ro-bar"></div>'+
+        '<img src="'+r.thumb+'" alt="'+ord.name+'" loading="lazy">'+
+        '<div class="ro-body">'+
+          '<div class="ro-tag">'+ord.tag+'</div>'+
+          '<div class="ro-name">'+ord.name+'</div>'+
+          '<div class="ro-price">'+(lang==='en'?'From ':'Dès ')+(lang==='en'?r.price:r.price_fr)+'</div>'+
+        '</div>'+
+      '</button>';
+    }).join('');
+  }
+  /* footer */
+  var rft=document.getElementById('rfooter-txt');
+  if(rft)rft.innerHTML=t.rfooter+' <button onclick="goHome()" style="color:rgba(212,168,67,.5);background:none;border:none;cursor:pointer;font-family:var(--fb);font-size:.68rem;font-weight:300">'+t.rfooter_home+'</button>';
+}
+
+function switchHeroImg(el,src){
+  var bg=document.getElementById('rh-bg');
+  if(bg)bg.style.backgroundImage="url('"+src+"')";
+  document.querySelectorAll('.rthumb').forEach(function(t){t.classList.remove('active');});
+  el.classList.add('active');
+}
+
+/* ══════════════════════════════════════════
+   EMAIL — EmailJS + mailto fallback
+   ─────────────────────────────────────────
+   Setup (free): https://www.emailjs.com
+   1. Create account → Add Email Service → copy SERVICE_ID
+   2. Create Template with variables:
+      {{from_name}} {{from_email}} {{phone}}
+      {{checkin}} {{checkout}} {{room_type}}
+      {{guests}} {{special}} {{reply_to}}
+      → copy TEMPLATE_ID + PUBLIC_KEY
+   3. Replace the 3 YOUR_* values below.
+   Until configured: opens mail client as fallback.
+══════════════════════════════════════════ */
+(function(){
+  var s=document.createElement('script');
+  s.src='https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+  s.onload=function(){
+    try{emailjs.init({publicKey:'YOUR_EMAILJS_PUBLIC_KEY'});}catch(e){}
+  };
+  document.head.appendChild(s);
+})();
+
+var EJS_SERVICE  = 'YOUR_SERVICE_ID';
+var EJS_TEMPLATE = 'YOUR_TEMPLATE_ID';
+
+function sendEmail(params, onOk, onErr){
+  if(typeof emailjs!=='undefined' && EJS_SERVICE!=='YOUR_SERVICE_ID'){
+    emailjs.send(EJS_SERVICE, EJS_TEMPLATE, params).then(onOk, onErr);
+  } else {
+    var subject=encodeURIComponent('Reservation – '+params.room_type);
+    var body=encodeURIComponent(
+      'Guest: '+params.from_name+'\nEmail: '+params.from_email+
+      '\nPhone: '+(params.phone||'N/A')+
+      '\nCheck-in: '+params.checkin+'\nCheck-out: '+params.checkout+
+      '\nRoom: '+params.room_type+'\nGuests: '+params.guests+
+      '\nSpecial: '+(params.special||'None')
+    );
+    window.open('mailto:reservations@empireluxuryhotel.cm?subject='+subject+'&body='+body,'_blank');
+    onOk();
+  }
+}
+
+function showNtf(title, body){
+  si('ntf-t',title);si('ntf-b',body);
+  var n=document.getElementById('ntf');
+  n.classList.add('sh');
+  setTimeout(function(){n.classList.remove('sh');},5000);
+}
+
+function submitMain(e){
+  e.preventDefault();
+  var t=T[lang];
+  var name=document.getElementById('f-name').value.trim();
+  var email=document.getElementById('f-email').value.trim();
+  var ci=document.getElementById('f-ci').value;
+  var co=document.getElementById('f-co').value;
+  if(!name||!email||!ci||!co){showNtf('',t.ntf_err);return;}
+  var btn=document.getElementById('f-submit');
+  btn.disabled=true;btn.textContent=t.sending;
+  var params={
+    to_email:'reservations@empireluxuryhotel.cm',
+    from_name:name,from_email:email,
+    phone:document.getElementById('f-phone').value||'N/A',
+    checkin:ci,checkout:co,
+    room_type:document.getElementById('f-room').value||'Not specified',
+    guests:document.getElementById('f-guests').value||'1',
+    special:document.getElementById('f-req').value||'None',
+    reply_to:email
+  };
+  sendEmail(params,function(){
+    btn.disabled=false;btn.textContent=t.f_submit;
+    showNtf(t.ntf_ok,t.ntf_ok_b);
+    document.getElementById('main-form').reset();
+  },function(){
+    btn.disabled=false;btn.textContent=t.f_submit;
+    showNtf('',t.mail_open);
+  });
+}
+
+function submitRoom(e, roomName){
+  e.preventDefault();
+  var t=T[lang];
+  var form=e.target;
+  var inputs=form.querySelectorAll('.rfi');
+  var name=inputs[0]?inputs[0].value.trim():'';
+  var email=inputs[1]?inputs[1].value.trim():'';
+  var ci=inputs[2]?inputs[2].value:'';
+  var co=inputs[3]?inputs[3].value:'';
+  if(!name||!email||!ci||!co){showNtf('',t.ntf_err);return;}
+  var btn=form.querySelector('.rbk-btn');
+  btn.disabled=true;btn.textContent=t.sending;
+  var params={
+    to_email:'reservations@empireluxuryhotel.cm',
+    from_name:name,from_email:email,phone:'N/A',
+    checkin:ci,checkout:co,room_type:roomName,
+    guests:inputs[4]?inputs[4].value:'1',special:'Room page booking',reply_to:email
+  };
+  sendEmail(params,function(){
+    btn.disabled=false;btn.textContent=t.rb_btn;
+    showNtf(t.ntf_ok,t.ntf_ok_b);
+    form.reset();
+  },function(){
+    btn.disabled=false;btn.textContent=t.rb_btn;
+    showNtf('',t.mail_open);
+  });
+}
+
+/* ══════════════════════════════════════════
+   LIGHTBOX
+══════════════════════════════════════════ */
+function openLB(src){
+  document.getElementById('lbi').src=src;
+  document.getElementById('lbx').classList.add('op');
+  document.body.style.overflow='hidden';
+}
+function closeLB(){
+  document.getElementById('lbx').classList.remove('op');
+  document.body.style.overflow='';
+}
+document.getElementById('lbxc').addEventListener('click',closeLB);
+document.getElementById('lbx').addEventListener('click',function(e){if(e.target===this)closeLB();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLB();});
+
+/* ══════════════════════════════════════════
+   MOBILE MENU
+══════════════════════════════════════════ */
+function openMenu(){
+  document.getElementById('mm').classList.add('op');
+  document.getElementById('mlo').classList.add('op');
+  document.getElementById('hbg').classList.add('op');
+  document.body.style.overflow='hidden';
+}
+function closeMenu(){
+  document.getElementById('mm').classList.remove('op');
+  document.getElementById('mlo').classList.remove('op');
+  document.getElementById('hbg').classList.remove('op');
+  document.body.style.overflow='';
+}
+document.getElementById('hbg').addEventListener('click',openMenu);
+document.getElementById('mlo').addEventListener('click',closeMenu);
+document.getElementById('hbg').addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')openMenu();});
+
+/* ══════════════════════════════════════════
+   NAVBAR SCROLL (only on home page)
+══════════════════════════════════════════ */
+window.addEventListener('scroll',function(){
+  var nb=document.getElementById('nb');
+  if(document.getElementById('page-home').classList.contains('active')){
+    nb.classList.toggle('sc',window.scrollY>80);
+  }
+},{passive:true});
+
+/* ══════════════════════════════════════════
+   SCROLL REVEAL
+══════════════════════════════════════════ */
+var observer=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('in');observer.unobserve(e.target);}
+  });
+},{threshold:0.08,rootMargin:'0px 0px -25px 0px'});
+function observeAll(){
+  document.querySelectorAll('.rv:not(.in)').forEach(function(el){observer.observe(el);});
+}
+
+/* ══════════════════════════════════════════
+   HERO PARALLAX
+══════════════════════════════════════════ */
+if(window.innerWidth>900){
+  var hbg2=document.querySelector('.hbg2');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY<window.innerHeight&&hbg2)
+      hbg2.style.transform='translateY('+window.scrollY*.28+'px)';
+  },{passive:true});
+}
+
+/* ══════════════════════════════════════════
+   INIT
+══════════════════════════════════════════ */
+(function(){
+  try{lang=localStorage.getItem('empire-lang')||'en';}catch(e){}
+  document.getElementById('btn-en').classList.toggle('on',lang==='en');
+  document.getElementById('btn-fr').classList.toggle('on',lang==='fr');
+  document.documentElement.lang=lang;
+  applyLang();
+  observeAll();
+})();
+</script>
+</body>
+</html>
