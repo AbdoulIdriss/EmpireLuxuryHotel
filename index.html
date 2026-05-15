@@ -304,9 +304,29 @@ button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
 .mpb:hover{border-color:var(--gold);background:var(--red)}
 .mpb .mpi{font-size:1.5rem;margin-bottom:.38rem}
 .mpb .mpt{font-family:var(--fa);font-size:.58rem;letter-spacing:.2em;color:var(--gold)}
-.srow{display:flex;gap:.65rem;margin-top:1.7rem;flex-wrap:wrap}
-.sb{width:37px;height:37px;border:1px solid rgba(139,26,26,.18);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;color:rgba(14,14,14,.38);transition:var(--tr)}
-.sb:hover{border-color:var(--red);color:var(--red);transform:translateY(-3px)}
+/* ── SOCIAL ICONS (SVG-based) ── */
+.srow{display:flex;gap:.7rem;margin-top:1.7rem;flex-wrap:wrap;align-items:center}
+.sb{
+  width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  transition:var(--tr);flex-shrink:0;border:1px solid rgba(139,26,26,.2);
+  background:transparent;cursor:pointer;
+}
+.sb svg{width:16px;height:16px;fill:rgba(14,14,14,.45);transition:fill .3s}
+.sb:hover{border-color:var(--red);transform:translateY(-3px)}
+.sb:hover svg{fill:var(--red)}
+/* footer variant */
+.sb.light{border-color:rgba(248,243,234,.1)}
+.sb.light svg{fill:rgba(248,243,234,.3)}
+.sb.light:hover{border-color:var(--gold)}
+.sb.light:hover svg{fill:var(--gold)}
+/* contact icons — remove emoji circles, use simple lines */
+.ci-icon{
+  width:36px;height:36px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  border-left:2px solid var(--red);
+  font-family:var(--fa);font-size:.52rem;letter-spacing:.08em;
+  color:var(--red);font-weight:600;
+}
 
 /* ══════════════════════════════════════════
    FOOTER
@@ -411,6 +431,21 @@ footer{background:var(--noir);border-top:1px solid rgba(212,168,67,.1);padding:c
 .rfooter p{font-size:.68rem;font-weight:300;color:rgba(248,243,234,.2)}
 .rfooter button{color:rgba(212,168,67,.5);background:none;border:none;cursor:pointer;font-size:.68rem;font-family:var(--fb);transition:color .3s}
 .rfooter button:hover{color:var(--gold)}
+/* ── BACK NAVIGATION ── */
+.back-nav-btn{display:none;align-items:center;gap:.55rem;font-family:var(--fa);font-size:.62rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ivory);background:none;border:none;cursor:pointer;transition:color .3s;padding:0;flex-shrink:0}
+.back-nav-btn:hover{color:var(--gold)}
+.back-nav-btn .arr{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid rgba(212,168,67,.35);border-radius:50%;font-size:1rem;transition:var(--tr);flex-shrink:0}
+.back-nav-btn:hover .arr{border-color:var(--gold);background:rgba(212,168,67,.1);transform:translateX(-3px)}
+.back-nav-btn.vis{display:flex}
+.room-breadcrumb{display:flex;align-items:center;gap:.55rem;font-family:var(--fa);font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(248,243,234,.45);margin-bottom:1rem;flex-wrap:wrap}
+.room-breadcrumb button{color:rgba(248,243,234,.45);background:none;border:none;cursor:pointer;font-family:var(--fa);font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;padding:0;transition:color .3s}
+.room-breadcrumb button:hover{color:var(--gold)}
+.room-breadcrumb .sep{color:rgba(248,243,234,.2);font-size:.55rem}
+.room-breadcrumb .cur{color:var(--gold)}
+.back-fab{display:none;position:fixed;bottom:1.8rem;left:1.8rem;z-index:900;align-items:center;gap:.5rem;padding:.58rem 1.1rem .58rem .75rem;background:rgba(12,12,12,0.93);border:1px solid rgba(212,168,67,.28);border-radius:30px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);cursor:pointer;transition:var(--tr);font-family:var(--fa);font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);box-shadow:0 4px 20px rgba(0,0,0,.45);white-space:nowrap}
+.back-fab:hover{border-color:var(--gold);background:rgba(30,8,8,0.97);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.55)}
+.back-fab .fab-arr{font-size:.95rem;line-height:1}
+.back-fab.vis{display:flex}
 
 /* ══════════════════════════════════════════
    LIGHTBOX & NOTIFICATION
@@ -486,6 +521,12 @@ footer{background:var(--noir);border-top:1px solid rgba(212,168,67,.1);padding:c
   <span id="ntf-b"></span>
 </div>
 
+<!-- FLOATING BACK FAB — shown on room pages -->
+<button class="back-fab" id="back-fab" onclick="goHome()">
+  <span class="fab-arr">←</span>
+  <span id="fab-txt"></span>
+</button>
+
 <!-- MOBILE OVERLAY & MENU -->
 <div class="mlo" id="mlo"></div>
 <nav class="mm" id="mm"></nav>
@@ -496,6 +537,11 @@ footer{background:var(--noir);border-top:1px solid rgba(212,168,67,.1);padding:c
     <span class="nl-m">EMPIRE</span>
     <span class="nl-s">Luxury Hotel</span>
   </div>
+  <!-- BACK BUTTON (room pages only) -->
+  <button class="back-nav-btn" id="back-nav-btn" onclick="goHome()">
+    <span class="arr">←</span>
+    <span id="back-nav-txt"></span>
+  </button>
   <nav class="nv" role="navigation" id="main-nav"></nav>
   <div class="nr">
     <button class="lb on" id="btn-en" onclick="setLang('en')">EN</button>
@@ -690,17 +736,27 @@ footer{background:var(--noir);border-top:1px solid rgba(212,168,67,.1);padding:c
     </div>
     <div class="cside rv d2">
       <h3 class="chead" id="contact-h"></h3>
-      <div class="ci"><div class="cico">📍</div><div><div class="clbl" id="c-addr-l"></div><div class="cv" id="c-addr-v"></div></div></div>
-      <div class="ci"><div class="cico">📞</div><div><div class="clbl" id="c-ph-l"></div><div class="cv"><a href="tel:+237698800140">+237 698 80 01 40</a></div></div></div>
-      <div class="ci"><div class="cico">✉️</div><div><div class="clbl">Email</div><div class="cv"><a href="mailto:reservations@empireluxuryhotel.cm" style="word-break:break-all">reservations@empireluxuryhotel.cm</a></div></div></div>
-      <div class="ci"><div class="cico">🌐</div><div><div class="clbl" id="c-web-l"></div><div class="cv">www.empireluxuryhotel.cm</div></div></div>
-      <a href="https://maps.google.com/?q=Etoa-Meki+Yaoundé+Cameroon" target="_blank" rel="noopener" class="mpb"><div class="mpi">🗺️</div><div class="mpt" id="map-t"></div></a>
+      <div class="ci"><div class="ci-icon">LOC</div><div><div class="clbl" id="c-addr-l"></div><div class="cv" id="c-addr-v"></div></div></div>
+      <div class="ci"><div class="ci-icon">TEL</div><div><div class="clbl" id="c-ph-l"></div><div class="cv"><a href="tel:+237698800140">+237 698 80 01 40</a></div></div></div>
+      <div class="ci"><div class="ci-icon">@</div><div><div class="clbl">Email</div><div class="cv"><a href="mailto:reservations@empireluxuryhotel.cm" style="word-break:break-all">reservations@empireluxuryhotel.cm</a></div></div></div>
+      <div class="ci"><div class="ci-icon">WEB</div><div><div class="clbl" id="c-web-l"></div><div class="cv">www.empireluxuryhotel.cm</div></div></div>
+      <a href="https://maps.google.com/?q=Etoa-Meki+Yaoundé+Cameroon" target="_blank" rel="noopener" class="mpb"><div class="mpt" id="map-t"></div></a>
       <div class="srow">
-        <a href="#" class="sb" aria-label="Instagram">📸</a>
-        <a href="#" class="sb" aria-label="Facebook">👤</a>
-        <a href="#" class="sb" aria-label="Twitter">🐦</a>
-        <a href="#" class="sb" aria-label="TripAdvisor">⭐</a>
-        <a href="https://wa.me/237698800140" class="sb" aria-label="WhatsApp" target="_blank" rel="noopener">💬</a>
+        <a href="#" class="sb" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="#" class="sb" aria-label="Facebook" title="Facebook">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" class="sb" aria-label="Twitter / X" title="Twitter / X">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" class="sb" aria-label="TripAdvisor" title="TripAdvisor">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 110-16 8 8 0 010 16zm3.5-9a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm-7 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm3.5-2c-1.4 0-2.7.5-3.7 1.3l-.8-.8h-1.2l.7 1.4C6.4 11.6 6 12.8 6 14c0 3.3 2.7 6 6 6s6-2.7 6-6c0-1.2-.4-2.4-1-3.3l.7-1.4h-1.2l-.8.8C14.7 9.5 13.4 9 12 9zm0 1c1.1 0 2.1.4 2.8 1l-2.8 2-2.8-2C10 10.4 11 10 12 10zm0 8c-2.8 0-5-2.2-5-5 0-.8.2-1.5.5-2.2L12 14l4.5-3.2c.3.7.5 1.4.5 2.2 0 2.8-2.2 5-5 5z"/></svg>
+        </a>
+        <a href="https://wa.me/237698800140" class="sb" aria-label="WhatsApp" title="WhatsApp" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
       </div>
     </div>
   </div>
@@ -744,9 +800,15 @@ footer{background:var(--noir);border-top:1px solid rgba(212,168,67,.1);padding:c
         <li><a href="mailto:reservations@empireluxuryhotel.cm" style="font-size:.7rem;font-weight:300;color:rgba(248,243,234,.35);word-break:break-all">reservations@empireluxuryhotel.cm</a></li>
         <li style="margin-top:1rem">
           <div class="srow" style="gap:.5rem">
-            <a href="#" class="sb" style="border-color:rgba(248,243,234,.08);color:rgba(248,243,234,.28)" aria-label="Instagram">📸</a>
-            <a href="#" class="sb" style="border-color:rgba(248,243,234,.08);color:rgba(248,243,234,.28)" aria-label="Facebook">👤</a>
-            <a href="https://wa.me/237698800140" class="sb" style="border-color:rgba(248,243,234,.08);color:rgba(248,243,234,.28)" aria-label="WhatsApp" target="_blank" rel="noopener">💬</a>
+            <a href="#" class="sb light" aria-label="Instagram" title="Instagram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" class="sb light" aria-label="Facebook" title="Facebook">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://wa.me/237698800140" class="sb light" aria-label="WhatsApp" title="WhatsApp" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
           </div>
         </li>
       </ul>
@@ -768,6 +830,7 @@ footer{background:var(--noir);border-top:1px solid rgba(212,168,67,.1);padding:c
       <div class="rh-bg" id="rh-bg"></div>
       <div class="rh-ov"></div>
       <div class="rh-content">
+        <div class="room-breadcrumb" id="rh-breadcrumb"></div>
         <div class="rh-tag" id="rh-tag"></div>
         <h1 class="rh-name" id="rh-name"></h1>
         <p class="rh-sub" id="rh-sub"></p>
@@ -855,7 +918,9 @@ en:{
   ro_title:'Explore <em>Other Rooms</em>',ro_all:'View all rooms →',rfooter:'© 2024 Empire Luxury Hotel ·',rfooter_home:'Back to Home',
   rb_from:'From',rb_per:'/ night',rb_btn:'Book This Room',rb_wa:'💬  Book via WhatsApp',rb_note:'Confirmation within 2 hours',
   rb_name:'Full Name',rb_email:'Email',rb_ci:'Check-in',rb_co:'Check-out',rb_guests:'Guests',
-  incl_h:"What's Included",feats_h:'Room Features',pol_h:'Room Policy'
+  incl_h:"What's Included",feats_h:'Room Features',pol_h:'Room Policy',
+  back_nav:'All Rooms',fab_txt:'Back',
+  breadcrumb_home:'Home',breadcrumb_rooms:'Rooms'
 },
 fr:{
   nav:['À Propos','Chambres','Restauration','Expériences','Galerie','Contact'],
@@ -916,7 +981,9 @@ fr:{
   ro_title:"Explorer <em>d'Autres Chambres</em>",ro_all:'Voir toutes les chambres →',rfooter:'© 2024 Empire Luxury Hotel ·',rfooter_home:'Retour à l\'Accueil',
   rb_from:'Dès',rb_per:'/ nuit',rb_btn:'Réserver cette Chambre',rb_wa:'💬  Réserver via WhatsApp',rb_note:'Confirmation sous 2 heures',
   rb_name:'Nom Complet',rb_email:'Email',rb_ci:'Arrivée',rb_co:'Départ',rb_guests:'Personnes',
-  incl_h:'Ce qui est Inclus',feats_h:'Équipements',pol_h:'Politique'
+  incl_h:'Ce qui est Inclus',feats_h:'Équipements',pol_h:'Politique',
+  back_nav:'Toutes les Chambres',fab_txt:'Retour',
+  breadcrumb_home:'Accueil',breadcrumb_rooms:'Chambres'
 }
 };
 
@@ -1007,17 +1074,32 @@ function showPage(id){
   if(p)p.classList.add('active');
   window.scrollTo(0,0);
   var nb=document.getElementById('nb');
-  if(nb){nb.classList.remove('sc');nb.classList.toggle('room-nb',id==='page-room');}
+  var isRoom=(id==='page-room');
+  if(nb){
+    nb.classList.remove('sc');
+    nb.classList.toggle('room-nb',isRoom);
+  }
+  /* show/hide back elements */
+  var backBtn=document.getElementById('back-nav-btn');
+  var backFab=document.getElementById('back-fab');
+  var mainNav=document.getElementById('main-nav');
+  var navRes=document.getElementById('nav-reserve');
+  if(backBtn){backBtn.classList.toggle('vis',isRoom);}
+  if(backFab){backFab.classList.toggle('vis',isRoom);}
+  if(mainNav){mainNav.style.display=isRoom?'none':'';}
+  if(navRes){navRes.style.display=isRoom?'none':'';}
 }
 
 function goHome(){
   curRoom=null;
+  history.pushState({page:'home'},'','#');
   showPage('page-home');
   renderNav();
 }
 
 function goSection(sec){
   curRoom=null;
+  history.pushState({page:'home',section:sec},'','#'+sec);
   showPage('page-home');
   renderNav();
   setTimeout(function(){
@@ -1028,10 +1110,31 @@ function goSection(sec){
 
 function openRoom(id){
   curRoom=id;
+  history.pushState({page:'room',room:id},'','#room-'+id);
   showPage('page-room');
   renderRoomPage(id);
   renderNav();
 }
+
+/* browser back/forward button support */
+window.addEventListener('popstate',function(e){
+  if(e.state&&e.state.page==='room'&&e.state.room){
+    curRoom=e.state.room;
+    showPage('page-room');
+    renderRoomPage(e.state.room);
+    renderNav();
+  } else {
+    curRoom=null;
+    showPage('page-home');
+    renderNav();
+    if(e.state&&e.state.section){
+      setTimeout(function(){
+        var el=document.getElementById(e.state.section);
+        if(el)el.scrollIntoView({behavior:'smooth'});
+      },80);
+    }
+  }
+});
 
 /* ══════════════════════════════════════════
    LANGUAGE
@@ -1109,6 +1212,9 @@ function applyLang(){
 function renderNav(){
   var t=T[lang];
   st('nav-reserve',t.reserve);
+  /* back button labels */
+  st('back-nav-txt', t.back_nav);
+  st('fab-txt', t.fab_txt);
   /* desktop nav */
   var navSections=['about','rooms','dining','amenities','gallery','booking'];
   var navEl=document.getElementById('main-nav');
@@ -1118,17 +1224,21 @@ function renderNav(){
       return'<button onclick="goSection(\''+sec+'\')">'+(curRoom&&i===1?'<span style="color:var(--gold)">'+label+'</span>':label)+'</button>';
     }).join('');
   }
-  /* mobile nav */
+  /* mobile nav — add back button at top if on room page */
   var mm=document.getElementById('mm');
   if(mm){
-    mm.innerHTML=t.nav.map(function(label,i){
-      return'<button onclick="goSection(\''+navSections[i]+'\');closeMenu()">'+label+'</button>';
-    }).join('')+
-    '<button class="mr" onclick="goSection(\'booking\');closeMenu()">'+t.reserve+'</button>'+
-    '<div style="display:flex;gap:.6rem;margin-top:1.4rem">'+
-      '<button class="lb '+(lang==='en'?'on':'')+'" onclick="setLang(\'en\')">EN</button>'+
-      '<button class="lb '+(lang==='fr'?'on':'')+'" onclick="setLang(\'fr\')">FR</button>'+
-    '</div>';
+    var backRow = curRoom
+      ? '<button onclick="goHome();closeMenu()" style="color:var(--gold);display:flex;align-items:center;gap:.5rem;border-bottom:1px solid rgba(212,168,67,.18)!important"><span style="font-size:1rem">←</span> '+t.back_nav+'</button>'
+      : '';
+    mm.innerHTML=backRow+
+      t.nav.map(function(label,i){
+        return'<button onclick="goSection(\''+navSections[i]+'\');closeMenu()">'+label+'</button>';
+      }).join('')+
+      '<button class="mr" onclick="goSection(\'booking\');closeMenu()">'+t.reserve+'</button>'+
+      '<div style="display:flex;gap:.6rem;margin-top:1.4rem">'+
+        '<button class="lb '+(lang==='en'?'on':'')+'" onclick="setLang(\'en\')">EN</button>'+
+        '<button class="lb '+(lang==='fr'?'on':'')+'" onclick="setLang(\'fr\')">FR</button>'+
+      '</div>';
   }
 }
 
@@ -1177,6 +1287,16 @@ function renderRoomPage(id){
   var bg=document.getElementById('rh-bg');
   if(bg)bg.style.backgroundImage="url('"+room.img+"')";
   st('rh-tag',rd.tag);si('rh-name','<em>'+rd.name+'</em>');st('rh-sub',rd.hero_sub);
+  /* breadcrumb */
+  var bc=document.getElementById('rh-breadcrumb');
+  if(bc){
+    bc.innerHTML=
+      '<button onclick="goHome()">'+t.breadcrumb_home+'</button>'+
+      '<span class="sep">›</span>'+
+      '<button onclick="goSection(\'rooms\')">'+t.breadcrumb_rooms+'</button>'+
+      '<span class="sep">›</span>'+
+      '<span class="cur">'+rd.name+'</span>';
+  }
   /* thumbnails */
   var thumbs=document.getElementById('rthumbs');
   if(thumbs){
@@ -1274,33 +1394,54 @@ function switchHeroImg(el,src){
    3. Replace the 3 YOUR_* values below.
    Until configured: opens mail client as fallback.
 ══════════════════════════════════════════ */
-(function(){
-  var s=document.createElement('script');
-  s.src='https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
-  s.onload=function(){
-    try{emailjs.init({publicKey:'YOUR_EMAILJS_PUBLIC_KEY'});}catch(e){}
-  };
-  document.head.appendChild(s);
-})();
+/* ══════════════════════════════════════════
+   EMAIL — pure mailto (no external scripts,
+   no CDN, no cross-origin errors ever).
+   When the hotel sets up EmailJS they can
+   add the SDK manually to their server.
+   ─────────────────────────────────────────
+   For live email delivery without a server:
+   1. Go to https://www.emailjs.com (free)
+   2. Add Service + Template with vars:
+      {{from_name}} {{from_email}} {{phone}}
+      {{checkin}} {{checkout}} {{room_type}}
+      {{guests}} {{special}}
+   3. Add this BEFORE closing body tag:
+      [script src="cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"][/script]
+      [script]emailjs.init({publicKey:'YOUR_KEY'});[/script]
+   4. Set EJS_SERVICE and EJS_TEMPLATE below.
+══════════════════════════════════════════ */
+var EJS_SERVICE  = '';   /* paste YOUR_SERVICE_ID  here when ready */
+var EJS_TEMPLATE = '';   /* paste YOUR_TEMPLATE_ID here when ready */
 
-var EJS_SERVICE  = 'YOUR_SERVICE_ID';
-var EJS_TEMPLATE = 'YOUR_TEMPLATE_ID';
-
-function sendEmail(params, onOk, onErr){
-  if(typeof emailjs!=='undefined' && EJS_SERVICE!=='YOUR_SERVICE_ID'){
-    emailjs.send(EJS_SERVICE, EJS_TEMPLATE, params).then(onOk, onErr);
-  } else {
-    var subject=encodeURIComponent('Reservation – '+params.room_type);
-    var body=encodeURIComponent(
-      'Guest: '+params.from_name+'\nEmail: '+params.from_email+
-      '\nPhone: '+(params.phone||'N/A')+
-      '\nCheck-in: '+params.checkin+'\nCheck-out: '+params.checkout+
-      '\nRoom: '+params.room_type+'\nGuests: '+params.guests+
-      '\nSpecial: '+(params.special||'None')
-    );
-    window.open('mailto:reservations@empireluxuryhotel.cm?subject='+subject+'&body='+body,'_blank');
-    onOk();
+function sendEmail(params, onOk, onFail){
+  /* If EmailJS SDK is present and configured → use it */
+  if(typeof emailjs !== 'undefined' && EJS_SERVICE && EJS_TEMPLATE){
+    try{
+      emailjs.send(EJS_SERVICE, EJS_TEMPLATE, params)
+        .then(function(){ onOk(); }, function(){ fallbackMailto(params); onOk(); });
+    }catch(e){ fallbackMailto(params); onOk(); }
+    return;
   }
+  /* Otherwise → mailto fallback (always works) */
+  fallbackMailto(params);
+  onOk();
+}
+
+function fallbackMailto(p){
+  var subj = encodeURIComponent('Reservation Request – '+p.room_type);
+  var body = encodeURIComponent(
+    'Guest Name: '  + p.from_name  + '\n' +
+    'Email: '       + p.from_email + '\n' +
+    'Phone: '       + (p.phone||'N/A') + '\n' +
+    'Check-in: '    + p.checkin    + '\n' +
+    'Check-out: '   + p.checkout   + '\n' +
+    'Room: '        + p.room_type  + '\n' +
+    'Guests: '      + p.guests     + '\n' +
+    'Special Req: ' + (p.special||'None')
+  );
+  window.location.href =
+    'mailto:reservations@empireluxuryhotel.cm?subject='+subj+'&body='+body;
 }
 
 function showNtf(title, body){
@@ -1444,6 +1585,8 @@ if(window.innerWidth>900){
   document.getElementById('btn-en').classList.toggle('on',lang==='en');
   document.getElementById('btn-fr').classList.toggle('on',lang==='fr');
   document.documentElement.lang=lang;
+  /* push initial history state */
+  history.replaceState({page:'home'},'','#');
   applyLang();
   observeAll();
 })();
